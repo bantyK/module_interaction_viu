@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.banty.amplitudeanalyticscomponent">
+
+    <application>
+        <meta-data android:name="VIUAPP@AnalyticsAmplitudeComponent"
+                   android:value="IAnalytics@com.banty.amplitudeanalyticscomponent.AmplitudeAnalyticsComponentCreator"/>
+
+    </application>
+</manifest>

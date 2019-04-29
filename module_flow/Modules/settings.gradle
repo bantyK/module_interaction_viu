@@ -1,0 +1,8 @@
+include ':app',
+        ':OkHttpcomponent',
+        ':HttpInterface',
+        ':base',
+        ':ViuLoggerAnalytics',
+        ':AnalyticsInterface',
+        ':ModuleInterface'
+//        ':AmplitudeAnalyticsComponent'

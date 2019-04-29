@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.banty.analytics">
+
+    <application>
+        <meta-data android:name="VIUAPP@ViuAnalytics"
+                   android:value="IAnalytics@com.banty.analytics.ViuAnalyticsCreator"/>
+    </application>
+</manifest>

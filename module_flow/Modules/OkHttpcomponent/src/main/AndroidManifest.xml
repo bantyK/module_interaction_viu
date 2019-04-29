@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.banty.okhttpcomponent">
+
+    <application>
+        <meta-data android:name="VIUAPP@HttpComponent"
+                   android:value="IHttpInterface@com.banty.okhttpcomponent.OkHttpComponentCreator"/>
+
+    </application>
+
+</manifest>
