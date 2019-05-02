@@ -5,7 +5,7 @@ import org.json.JSONObject
 /**
  * Created by Banty on 2019-05-02.
  */
-object HomeFlowConfig {
+class HomeFlowConfig {
 
     fun getHomeFlowConfig(): JSONObject {
         val jsonObject = JSONObject()
