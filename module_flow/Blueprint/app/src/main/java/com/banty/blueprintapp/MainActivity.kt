@@ -2,6 +2,7 @@ package com.banty.blueprintapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.banty.config.AppInitConfig
 
 class MainActivity : AppCompatActivity() {
 
