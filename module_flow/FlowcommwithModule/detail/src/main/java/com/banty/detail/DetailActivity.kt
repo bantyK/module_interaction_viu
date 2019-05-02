@@ -16,6 +16,7 @@ internal class DetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_detail)
 
         val cid = intent?.getStringExtra("cid")
+
         if (cid != null) {
             Log.d("TAG", "Data from intent $cid")
             textView_detail.text = cid
