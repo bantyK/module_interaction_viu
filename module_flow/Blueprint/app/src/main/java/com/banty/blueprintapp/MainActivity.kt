@@ -2,6 +2,7 @@ package com.banty.blueprintapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.banty.home.HomeFragment
 import com.banty.init.app_init.SplashFragment
 
 class MainActivity : AppCompatActivity() {
@@ -11,9 +12,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, SplashFragment())
+                .add(R.id.fragment_container, HomeFragment())
                 .commit()
 
-        supportActionBar?.title = "Splash"
+        supportActionBar?.title = "App init flow - Splash fragment"
     }
 }

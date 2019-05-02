@@ -30,29 +30,29 @@ class SplashFragment : Fragment(), AppInitStateMachine {
     }
 
     @SuppressLint("SetTextI18n")
-    override fun stateChanged(state: InitStates, status: Status) {
+    override fun stateChanged(state: AppInitStates, status: Status) {
 
         textView_splash.append("App init state $state with Status $status \n")
 
-        if(state == InitStates.CHECK_APP_UPGRADE && status == Status.FAILED) {
+        if(state == AppInitStates.CHECK_APP_UPGRADE && status == Status.FAILED) {
             // send APP_UPGRADE_REQ status to columbus and halt the app init
             return
         }
 
         when (state) {
-            InitStates.CHECK_APP_UPGRADE -> {
+            AppInitStates.CHECK_APP_UPGRADE -> {
                 presenter.checkLocation()
             }
 
-            InitStates.LOCATION -> {
+            AppInitStates.LOCATION -> {
                 presenter.getSecurity()
             }
 
-            InitStates.SECURITY -> {
+            AppInitStates.SECURITY -> {
                 presenter.getProgramming()
             }
 
-            InitStates.PROGRAMMING -> {
+            AppInitStates.PROGRAMMING -> {
                 // send APP_INIT_PASS event to Columbus
             }
         }

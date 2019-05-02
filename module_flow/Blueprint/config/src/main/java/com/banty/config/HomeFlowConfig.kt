@@ -11,10 +11,10 @@ class HomeFlowConfig @Inject constructor() {
     fun getHomeFlowConfig(): JSONObject {
         val jsonObject = JSONObject()
 
-        jsonObject.put("show_recently_watched", true)
-        jsonObject.put("show_watchlist", false)
-        jsonObject.put("show_download_button", true)
-        jsonObject.put("launch_player_on_click", false)
+        jsonObject.put("home_flow_show_recently_watched", true)
+        jsonObject.put("home_flow_show_watchlist", true)
+        jsonObject.put("home_flow_show_download_button", true)
+        jsonObject.put("home_flow_launch_player_on_click", false)
 
         return jsonObject
     }

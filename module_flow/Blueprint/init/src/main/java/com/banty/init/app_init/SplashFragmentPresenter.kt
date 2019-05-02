@@ -20,29 +20,29 @@ class SplashFragmentPresenter(val appInitStateMachine: AppInitStateMachine) {
 
     fun startInit() {
         if (appInitConfig.getAppInitConfig().optBoolean("app_init_show_upgrade_popup")) {
-            appInitStateMachine.stateChanged(InitStates.CHECK_APP_UPGRADE, Status.FAILED)
+            appInitStateMachine.stateChanged(AppInitStates.CHECK_APP_UPGRADE, Status.FAILED)
         } else {
-            appInitStateMachine.stateChanged(InitStates.CHECK_APP_UPGRADE, Status.SUCCESS)
+            appInitStateMachine.stateChanged(AppInitStates.CHECK_APP_UPGRADE, Status.SUCCESS)
         }
     }
 
     fun checkLocation() {
         if (appInitConfig.getAppInitConfig().optBoolean("app_init_detect_location")) {
             locationService.getLocation()
-            appInitStateMachine.stateChanged(InitStates.LOCATION, Status.SUCCESS)
+            appInitStateMachine.stateChanged(AppInitStates.LOCATION, Status.SUCCESS)
         } else {
-            appInitStateMachine.stateChanged(InitStates.LOCATION, Status.OP_NOT_REQUIRED)
+            appInitStateMachine.stateChanged(AppInitStates.LOCATION, Status.OP_NOT_REQUIRED)
         }
     }
 
     fun getProgramming() {
         programming.getHomeUrl()
-        appInitStateMachine.stateChanged(InitStates.PROGRAMMING, Status.SUCCESS)
+        appInitStateMachine.stateChanged(AppInitStates.PROGRAMMING, Status.SUCCESS)
     }
 
     fun getSecurity() {
         securityService.getToken()
-        appInitStateMachine.stateChanged(InitStates.SECURITY, Status.SUCCESS)
+        appInitStateMachine.stateChanged(AppInitStates.SECURITY, Status.SUCCESS)
     }
 
 }

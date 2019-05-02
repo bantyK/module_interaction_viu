@@ -32,7 +32,7 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.20'
     kapt 'com.google.dagger:dagger-compiler:2.20'
 
-    implementation project(':core')
+    implementation project(':common')
     implementation project(':config')
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
