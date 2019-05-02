@@ -1,5 +1,6 @@
 package com.banty.init.di
 
+import com.banty.config.AppInitConfig
 import com.banty.init.location.LocationService
 import com.banty.init.programming.Programming
 import com.banty.init.security.SecurityService
@@ -16,4 +17,6 @@ interface AppInitComponent {
     fun injectProgramming() : Programming
 
     fun injectSecurityService() : SecurityService
+
+    fun injectAppInitConfig() : AppInitConfig
 }

@@ -1,11 +1,12 @@
 package com.banty.config
 
 import org.json.JSONObject
+import javax.inject.Inject
 
 /**
  * Created by Banty on 2019-05-02.
  */
-class HomeFlowConfig {
+class HomeFlowConfig @Inject constructor() {
 
     fun getHomeFlowConfig(): JSONObject {
         val jsonObject = JSONObject()

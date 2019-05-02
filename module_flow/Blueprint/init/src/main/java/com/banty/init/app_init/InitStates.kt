@@ -4,6 +4,7 @@ package com.banty.init.app_init
  * Created by Banty on 2019-05-02.
  */
 enum class InitStates {
+    CHECK_APP_UPGRADE,
     LOCATION,
     PROGRAMMING,
     SECURITY

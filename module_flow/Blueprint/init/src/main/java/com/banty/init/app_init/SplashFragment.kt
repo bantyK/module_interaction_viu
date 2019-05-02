@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.banty.config.AppInitConfig
 import com.banty.init.R
 import kotlinx.android.synthetic.main.splash_fragment.*
 
@@ -15,7 +14,7 @@ import kotlinx.android.synthetic.main.splash_fragment.*
  */
 class SplashFragment : Fragment(), AppInitStateMachine {
 
-    private lateinit var appInitializer: AppInitializer
+    private lateinit var presenter: SplashFragmentPresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.splash_fragment, container, false)
@@ -26,8 +25,8 @@ class SplashFragment : Fragment(), AppInitStateMachine {
 
         activity?.actionBar?.title = SplashFragment::class.java.simpleName
 
-        appInitializer = AppInitializer(AppInitConfig(), this)
-        appInitializer.startInit()
+        presenter = SplashFragmentPresenter(this)
+        presenter.startInit()
     }
 
     @SuppressLint("SetTextI18n")
@@ -35,17 +34,26 @@ class SplashFragment : Fragment(), AppInitStateMachine {
 
         textView_splash.append("App init state $state with Status $status \n")
 
+        if(state == InitStates.CHECK_APP_UPGRADE && status == Status.FAILED) {
+            // send APP_UPGRADE_REQ status to columbus and halt the app init
+            return
+        }
+
         when (state) {
+            InitStates.CHECK_APP_UPGRADE -> {
+                presenter.checkLocation()
+            }
+
             InitStates.LOCATION -> {
-                appInitializer.getSecurity()
+                presenter.getSecurity()
             }
 
             InitStates.SECURITY -> {
-                appInitializer.getProgramming()
+                presenter.getProgramming()
             }
 
             InitStates.PROGRAMMING -> {
-                // send event to Columbus about APP_INIT_PASS
+                // send APP_INIT_PASS event to Columbus
             }
         }
     }
