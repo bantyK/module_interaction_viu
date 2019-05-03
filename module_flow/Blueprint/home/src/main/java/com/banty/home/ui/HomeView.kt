@@ -23,4 +23,6 @@ interface IHomePresenter {
     fun provideWatchListClips(): List<Clip>
     fun getHomeFeed(): List<Clip>
     fun setupHomePage()
+
+    fun sendClipClickedEvent(clip: Clip)
 }

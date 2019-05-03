@@ -1,6 +1,8 @@
 package com.banty.home.ui.presenter
 
+import com.banty.columbus.Columbus
 import com.banty.core.model.Clip
+import com.banty.core.signal.Signal
 import com.banty.home.di.DaggerHomeFlowComponent
 import com.banty.home.ui.IHomePresenter
 
@@ -42,6 +44,12 @@ class HomePresenter(val view: IHomePresenter.HomeView?) : IHomePresenter {
         } else {
             view?.hideWatchlist()
         }
+    }
+
+    override fun sendClipClickedEvent(clip: Clip) {
+        val payload = HashMap<String, Any>()
+        payload["clip"] = clip
+        Columbus.getColumbus().postEvent(Signal.SHOW_PLAYER, payload)
     }
 
 }

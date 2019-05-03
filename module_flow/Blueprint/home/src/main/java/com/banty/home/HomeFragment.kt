@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.banty.core.Flow
 import com.banty.core.model.Clip
-import com.banty.core.modules.IHomeModule
+import com.banty.home.ui.recycler_view.ItemClickListener
 import com.banty.home.ui.IHomePresenter
 import com.banty.home.ui.presenter.HomePresenter
 import com.banty.home.ui.recycler_view.RecyclerAdapter
@@ -20,7 +20,8 @@ import kotlinx.android.synthetic.main.fragment_home.*
 /**
  * Created by Banty on 2019-05-02.
  */
-class HomeFragment : Fragment(), IHomePresenter.HomeView, Flow {
+class HomeFragment : Fragment(), IHomePresenter.HomeView, Flow, ItemClickListener {
+
     override fun getName(): String {
         return "HomeFlow"
     }
@@ -49,7 +50,7 @@ class HomeFragment : Fragment(), IHomePresenter.HomeView, Flow {
         recyclerView?.let {
             recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = RecyclerAdapter(context, clips)
+            recyclerView.adapter = RecyclerAdapter(context, clips, this)
         }
     }
 
@@ -82,6 +83,10 @@ class HomeFragment : Fragment(), IHomePresenter.HomeView, Flow {
     override fun onDestroy() {
         super.onDestroy()
         Log.d("Viu", "Home flow destroyed")
+    }
+
+    override fun itemClicked(clip: Clip) {
+        homePresenter.sendClipClickedEvent(clip)
     }
 
 }

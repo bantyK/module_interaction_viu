@@ -16,7 +16,7 @@ import kotlin.coroutines.CoroutineContext
 /**
  * Created by Banty on 2019-05-02.
  */
-class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
+class SplashFragment : Fragment(), Flow, AppInitStateMachine, CoroutineScope {
     val job = Job()
 
     override val coroutineContext: CoroutineContext
@@ -51,6 +51,7 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
         }
     }
 
+    // todo : This block can be moved to the presenter
     @SuppressLint("SetTextI18n")
     override fun stateChanged(state: AppInitStates, status: Status) {
         message = "Block $state, status $status \n"

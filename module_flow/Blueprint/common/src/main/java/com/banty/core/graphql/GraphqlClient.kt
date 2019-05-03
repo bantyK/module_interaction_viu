@@ -13,9 +13,9 @@ class GraphqlClient @Inject constructor() {
 
     fun provideHomeFeed(): List<Clip> {
         return listOf(
-                Clip("1", "Watchlist Clip 1", false, thumbUrl),
-                Clip("2", "Watchlist Clip 2", true, thumbUrl),
-                Clip("3", "Watchlist Clip 3", false, thumbUrl)
+                Clip("1", "Clip 1", false, thumbUrl),
+                Clip("2", "Clip 2", true, thumbUrl),
+                Clip("3", "Clip 3", false, thumbUrl)
         )
     }
 
