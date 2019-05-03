@@ -67,3 +67,7 @@ o
 ?home/src/main/java/com/banty/home/ui/presenter/HomePresenter.kt,2/d/2df810745f51e960fe935f2accd867ccc6abbd15
 a
 1home/src/main/java/com/banty/home/HomeFragment.kt,0/7/07d3a5222bad21ade81242aeed832758eebe8db1
+i
+9app/src/main/java/com/banty/blueprintapp/MainPresenter.kt,4/a/4a2e1abdcd0e478b471348e4b9f3d8ae221eac6b
+b
+2common/src/main/java/com/banty/core/model/Event.kt,3/9/392ae9cb6dbfa9890130191c5df2779592bae5fd

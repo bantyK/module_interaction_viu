@@ -1,12 +1,14 @@
 package com.banty.init.app_init
 
+import com.banty.columbus.Columbus
+import com.banty.core.signal.Signal
 import com.banty.init.di.AppInitComponent
 import com.banty.init.di.DaggerAppInitComponent
 
 /**
  * Created by Banty on 2019-05-02.
  */
-class SplashFragmentPresenter(val appInitStateMachine: AppInitStateMachine) {
+class SplashFragmentPresenter(private val appInitStateMachine: AppInitStateMachine) {
 
     private val initComponent: AppInitComponent = DaggerAppInitComponent.builder().build()
 
@@ -43,6 +45,10 @@ class SplashFragmentPresenter(val appInitStateMachine: AppInitStateMachine) {
     fun getSecurity() {
         securityService.getToken()
         appInitStateMachine.stateChanged(AppInitStates.SECURITY, Status.SUCCESS)
+    }
+
+    fun sendAppInitSuccessSignal() {
+        Columbus.getColumbus().postEvent(Signal.SHOW_HOME)
     }
 
 }

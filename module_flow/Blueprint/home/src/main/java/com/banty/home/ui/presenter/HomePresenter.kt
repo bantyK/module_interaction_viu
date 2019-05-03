@@ -1,7 +1,6 @@
 package com.banty.home.ui.presenter
 
 import com.banty.core.model.Clip
-import com.banty.home.HomeFragment
 import com.banty.home.di.DaggerHomeFlowComponent
 import com.banty.home.ui.IHomePresenter
 

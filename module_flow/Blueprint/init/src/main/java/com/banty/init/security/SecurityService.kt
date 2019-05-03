@@ -8,7 +8,6 @@ import javax.inject.Inject
 class SecurityService @Inject constructor() {
 
     fun getToken(): String {
-        Thread.sleep(1_000)
         return "viu::123"
     }
 }

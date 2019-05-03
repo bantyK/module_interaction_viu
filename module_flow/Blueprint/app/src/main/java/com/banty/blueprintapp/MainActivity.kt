@@ -1,20 +1,49 @@
 package com.banty.blueprintapp
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.banty.columbus.Columbus
+import com.banty.core.Flow
 import com.banty.home.HomeFragment
 import com.banty.init.app_init.SplashFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), MainActivityView {
+
+    private lateinit var mainPresenter: MainPresenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        supportFragmentManager.beginTransaction()
-                .add(R.id.fragment_container, HomeFragment())
-                .commit()
+        mainPresenter = MainPresenter(this, Columbus.getColumbus())
+        mainPresenter.register()
+    }
 
-        supportActionBar?.title = "App init flow - Splash fragment"
+    override fun onResume() {
+        super.onResume()
+        mainPresenter.startInit()
+    }
+
+    override fun navigateTo(flow: Flow) {
+        when (flow.getName()) {
+            "App init flow" ->
+                addFragment(SplashFragment())
+
+            "HomeFlow" ->
+                addFragment(HomeFragment())
+        }
+
+    }
+
+    private fun addFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .commit()
+    }
+
+    override fun onStop() {
+        super.onStop()
+        mainPresenter.unregister()
     }
 }
