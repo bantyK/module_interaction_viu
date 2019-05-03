@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.banty.core.Flow
 import com.banty.core.model.Clip
+import com.banty.core.modules.IHomeModule
 import com.banty.home.ui.IHomePresenter
 import com.banty.home.ui.presenter.HomePresenter
 import com.banty.home.ui.recycler_view.RecyclerAdapter
@@ -50,7 +51,6 @@ class HomeFragment : Fragment(), IHomePresenter.HomeView, Flow {
             recyclerView.setHasFixedSize(true)
             recyclerView.adapter = RecyclerAdapter(context, clips)
         }
-
     }
 
     override fun showWatchlist() {

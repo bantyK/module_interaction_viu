@@ -1,2 +1,2 @@
-include ':app', ':columbus', ':common', ':config', ':home', ':init'
+include ':app', ':columbus', ':common', ':config', ':home', ':init', ':ModuleInterface'
 rootProject.name='Blueprint App'

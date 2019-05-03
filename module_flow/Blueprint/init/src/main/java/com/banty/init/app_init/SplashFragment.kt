@@ -94,7 +94,6 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
                 }
 
                 AppInitStates.SECURITY -> {
-
                     launch {
                         async {
                             presenter.getProgramming()
