@@ -33,13 +33,18 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow {
         super.onViewCreated(view, savedInstanceState)
         presenter = SplashFragmentPresenter(this)
         presenter.startInit()
+
+        button_home.setOnClickListener {
+            presenter.sendAppInitSuccessSignal()
+        }
     }
 
     @SuppressLint("SetTextI18n")
     override fun stateChanged(state: AppInitStates, status: Status) {
         message = "App init state $state with Status $status \n"
         Log.d("Viu", message)
-        textView_splash.text = message
+        textView_splash.text = textView_splash.text.toString() + message
+
 
         if (state == AppInitStates.CHECK_APP_UPGRADE && status == Status.FAILED) {
             // send APP_UPGRADE_REQ status to columbus and halt the app init
@@ -60,7 +65,7 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow {
             }
 
             AppInitStates.PROGRAMMING -> {
-                presenter.sendAppInitSuccessSignal()
+                button_home.visibility = View.VISIBLE
             }
         }
     }

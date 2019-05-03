@@ -15,13 +15,12 @@ class MainActivity : AppCompatActivity(), MainActivityView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         mainPresenter = MainPresenter(this, Columbus.getColumbus())
-        mainPresenter.register()
     }
 
     override fun onResume() {
         super.onResume()
+        mainPresenter.register()
         mainPresenter.startInit()
     }
 
@@ -40,6 +39,8 @@ class MainActivity : AppCompatActivity(), MainActivityView {
         supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, fragment)
                 .commit()
+
+        supportActionBar?.title = (fragment as Flow).getName()
     }
 
     override fun onStop() {
