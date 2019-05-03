@@ -5,6 +5,7 @@ package com.banty.init.app_init
  */
 enum class AppInitStates {
     CHECK_APP_UPGRADE,
+    CHECK_NETWORK,
     LOCATION,
     PROGRAMMING,
     SECURITY

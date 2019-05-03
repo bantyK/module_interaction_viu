@@ -10,11 +10,18 @@ import androidx.fragment.app.Fragment
 import com.banty.core.Flow
 import com.banty.init.R
 import kotlinx.android.synthetic.main.splash_fragment.*
+import kotlinx.coroutines.*
+import kotlin.coroutines.CoroutineContext
 
 /**
  * Created by Banty on 2019-05-02.
  */
-class SplashFragment : Fragment(), AppInitStateMachine, Flow {
+class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
+    val job = Job()
+
+    override val coroutineContext: CoroutineContext
+        get() = job + Dispatchers.Main
+
 
     var message = ""
 
@@ -32,7 +39,12 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         presenter = SplashFragmentPresenter(this)
-        presenter.startInit()
+        launch {
+            async {
+                presenter.stateAppInit()
+            }
+        }
+
 
         button_home.setOnClickListener {
             presenter.sendAppInitSuccessSignal()
@@ -41,31 +53,59 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow {
 
     @SuppressLint("SetTextI18n")
     override fun stateChanged(state: AppInitStates, status: Status) {
-        message = "App init state $state with Status $status \n"
+        message = "Block $state, status $status \n"
         Log.d("Viu", message)
-        textView_splash.text = textView_splash.text.toString() + message
 
-
-        if (state == AppInitStates.CHECK_APP_UPGRADE && status == Status.FAILED) {
+        if (status == Status.FAILED) {
+            if (state == AppInitStates.CHECK_APP_UPGRADE)
             // send APP_UPGRADE_REQ status to columbus and halt the app init
-            return
-        }
-
-        when (state) {
-            AppInitStates.CHECK_APP_UPGRADE -> {
-                presenter.checkLocation()
+                return
+            else if (state == AppInitStates.CHECK_NETWORK) {
+                textView_splash.text = textView_splash.text.toString() + message
+                stateChanged(AppInitStates.PROGRAMMING, Status.SUCCESS)
             }
+        } else {
+            when (state) {
+                AppInitStates.CHECK_NETWORK -> {
+                    launch {
+                        async {
+                            presenter.checkAppUpgrade()
+                        }
+                        textView_splash.text = textView_splash.text.toString() + message
+                    }
+                }
 
-            AppInitStates.LOCATION -> {
-                presenter.getSecurity()
-            }
+                AppInitStates.CHECK_APP_UPGRADE -> {
+                    launch {
+                        async {
+                            presenter.checkLocation()
+                        }
+                        textView_splash.text = textView_splash.text.toString() + message
+                    }
+                }
 
-            AppInitStates.SECURITY -> {
-                presenter.getProgramming()
-            }
+                AppInitStates.LOCATION -> {
+                    launch {
+                        async {
+                            presenter.getSecurity()
+                        }
+                        textView_splash.text = textView_splash.text.toString() + message
+                    }
+                }
 
-            AppInitStates.PROGRAMMING -> {
-                button_home.visibility = View.VISIBLE
+                AppInitStates.SECURITY -> {
+
+                    launch {
+                        async {
+                            presenter.getProgramming()
+                        }
+                        textView_splash.text = textView_splash.text.toString() + message
+                    }
+                }
+
+                AppInitStates.PROGRAMMING -> {
+                    button_home.visibility = View.VISIBLE
+                }
             }
         }
     }

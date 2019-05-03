@@ -4,6 +4,7 @@ import com.banty.columbus.Columbus
 import com.banty.core.signal.Signal
 import com.banty.init.di.AppInitComponent
 import com.banty.init.di.DaggerAppInitComponent
+import kotlinx.coroutines.delay
 
 /**
  * Created by Banty on 2019-05-02.
@@ -20,7 +21,8 @@ class SplashFragmentPresenter(private val appInitStateMachine: AppInitStateMachi
 
     private val appInitConfig = initComponent.injectAppInitConfig()
 
-    fun startInit() {
+    suspend fun checkAppUpgrade() {
+        delay(1_000)
         if (appInitConfig.getAppInitConfig().optBoolean("app_init_show_upgrade_popup")) {
             appInitStateMachine.stateChanged(AppInitStates.CHECK_APP_UPGRADE, Status.FAILED)
         } else {
@@ -28,7 +30,8 @@ class SplashFragmentPresenter(private val appInitStateMachine: AppInitStateMachi
         }
     }
 
-    fun checkLocation() {
+    suspend fun checkLocation() {
+        delay(1_000)
         if (appInitConfig.getAppInitConfig().optBoolean("app_init_detect_location")) {
             locationService.getLocation()
             appInitStateMachine.stateChanged(AppInitStates.LOCATION, Status.SUCCESS)
@@ -37,18 +40,24 @@ class SplashFragmentPresenter(private val appInitStateMachine: AppInitStateMachi
         }
     }
 
-    fun getProgramming() {
+    suspend fun getProgramming() {
+        delay(1_000)
         programming.getHomeUrl()
         appInitStateMachine.stateChanged(AppInitStates.PROGRAMMING, Status.SUCCESS)
     }
 
-    fun getSecurity() {
+    suspend fun getSecurity() {
+        delay(1_000)
         securityService.getToken()
         appInitStateMachine.stateChanged(AppInitStates.SECURITY, Status.SUCCESS)
     }
 
     fun sendAppInitSuccessSignal() {
         Columbus.getColumbus().postEvent(Signal.SHOW_HOME)
+    }
+
+    fun stateAppInit() {
+        appInitStateMachine.stateChanged(AppInitStates.CHECK_NETWORK, Status.SUCCESS)
     }
 
 }
