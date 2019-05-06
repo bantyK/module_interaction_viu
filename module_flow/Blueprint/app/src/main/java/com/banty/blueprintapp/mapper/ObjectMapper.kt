@@ -15,7 +15,7 @@ class ObjectMapper(private val inputStream: InputStream) {
     /**
      * Contains the mapping of Signals and corresponding fragments.
      * */
-    val signalFragmentMap = HashMap<String, String>()
+    private val signalModuleMap = HashMap<String, String>()
 
     companion object {
         private var INSTANCE: ObjectMapper? = null
@@ -35,14 +35,14 @@ class ObjectMapper(private val inputStream: InputStream) {
         var line = reader.readLine()
         while (line != null) {
             val signalClassNameSplit = line.split("@")
-            signalFragmentMap[signalClassNameSplit[0]] = signalClassNameSplit[1]
+            signalModuleMap[signalClassNameSplit[0]] = signalClassNameSplit[1]
             line = reader.readLine()
         }
         return this
     }
 
     fun getClassName(signal: Signal): Class<*> {
-        val className = signalFragmentMap[signal.toString()]
+        val className = signalModuleMap[signal.toString()]
         try {
             if (className != null)
                 return Class.forName(className)

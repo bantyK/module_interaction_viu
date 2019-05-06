@@ -2,9 +2,8 @@ package com.banty.blueprintapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.banty.columbus.Columbus
-import com.banty.core.Flow
+import com.banty.core.ViuComponent
 
 class MainActivity : AppCompatActivity(), MainActivityView {
 
@@ -21,19 +20,12 @@ class MainActivity : AppCompatActivity(), MainActivityView {
     override fun onResume() {
         super.onResume()
         mainPresenter.register()
-        mainPresenter.startInit()
+        mainPresenter.startInit(R.id.fragment_container)
     }
 
-    override fun navigateTo(fragment: Fragment) {
-        addFragment(fragment)
-    }
-
-    private fun addFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .commit()
-
-        supportActionBar?.title = (fragment as Flow).getName()
+    override fun navigateTo(module: ViuComponent, payload: HashMap<String, Any>) {
+        payload["fragment_container"] = R.id.fragment_container
+        module.init(this, payload)
     }
 
     override fun onStop() {

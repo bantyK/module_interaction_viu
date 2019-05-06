@@ -1,2 +1,2 @@
-APP_INIT_START@com.banty.init.app_init.SplashFragment
-SHOW_HOME@com.banty.home.HomeFragment
+APP_INIT_START@com.banty.init.AppInitFlow
+SHOW_HOME@com.banty.home.HomeFlow

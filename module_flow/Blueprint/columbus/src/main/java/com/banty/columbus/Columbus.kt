@@ -26,7 +26,7 @@ class Columbus {
         this.router = null
     }
 
-    fun postEvent(signal: Signal, payload: HashMap<String, Any> = HashMap()) {
+    fun postEvent(signal: Signal, payload: HashMap<String, Any>) {
         if (router == null)
             throw IllegalStateException("No router is registered to Columbus")
 

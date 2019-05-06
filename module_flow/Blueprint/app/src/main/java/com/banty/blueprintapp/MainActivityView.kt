@@ -1,8 +1,7 @@
 package com.banty.blueprintapp
 
-import androidx.fragment.app.Fragment
-import com.banty.core.Flow
+import com.banty.core.ViuComponent
 
 interface MainActivityView {
-    fun navigateTo(fragment: Fragment)
+    fun navigateTo(module: ViuComponent, payload: HashMap<String, Any>)
 }
