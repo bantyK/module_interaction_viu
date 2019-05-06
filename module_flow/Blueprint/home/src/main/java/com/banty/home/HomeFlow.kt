@@ -2,12 +2,12 @@ package com.banty.home
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
-import com.banty.core.ViuComponent
+import com.banty.core.Flow
 
 /**
  * Created by Banty on 2019-05-06.
  */
-class HomeFlow : ViuComponent {
+class HomeFlow : Flow {
 
     override fun init(context: Context, payload: HashMap<String, Any>) {
 

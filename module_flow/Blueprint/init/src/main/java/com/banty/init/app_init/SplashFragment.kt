@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.banty.core.Flow
 import com.banty.init.R
 import kotlinx.android.synthetic.main.splash_fragment.*
 import kotlinx.coroutines.*
@@ -16,7 +15,7 @@ import kotlin.coroutines.CoroutineContext
 /**
  * Created by Banty on 2019-05-02.
  */
-class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
+class SplashFragment : Fragment(), AppInitStateMachine, CoroutineScope {
     val job = Job()
 
     override val coroutineContext: CoroutineContext
@@ -24,10 +23,6 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
 
 
     var message = ""
-
-    override fun getName(): String {
-        return "App init flow"
-    }
 
     private lateinit var presenter: SplashFragmentPresenter
 

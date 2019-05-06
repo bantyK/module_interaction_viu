@@ -3,7 +3,7 @@ package com.banty.blueprintapp
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.banty.columbus.Columbus
-import com.banty.core.ViuComponent
+import com.banty.core.Flow
 
 class MainActivity : AppCompatActivity(), MainActivityView {
 
@@ -23,8 +23,9 @@ class MainActivity : AppCompatActivity(), MainActivityView {
         mainPresenter.startInit(R.id.fragment_container)
     }
 
-    override fun navigateTo(module: ViuComponent, payload: HashMap<String, Any>) {
+    override fun navigateTo(module: Flow, payload: HashMap<String, Any>) {
         payload["fragment_container"] = R.id.fragment_container
+
         module.init(this, payload)
     }
 

@@ -4,7 +4,7 @@ import android.util.Log
 import com.banty.blueprintapp.mapper.ObjectMapper
 import com.banty.columbus.Columbus
 import com.banty.columbus.Router
-import com.banty.core.ViuComponent
+import com.banty.core.Flow
 import com.banty.core.signal.Signal
 
 /**
@@ -25,7 +25,7 @@ class MainPresenter(
     }
 
     override fun navigateTo(signal: Signal, payload: HashMap<String, Any>) {
-        val module = objectMapper.getClassName(signal).newInstance() as ViuComponent
+        val module = objectMapper.getClassName(signal).newInstance() as Flow
         Log.i("Viu", "Fragment name : ${module.javaClass.simpleName}")
         view.navigateTo(module, payload)
     }
