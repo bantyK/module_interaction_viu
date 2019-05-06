@@ -5,8 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.banty.columbus.Columbus
 import com.banty.core.Flow
-import com.banty.home.HomeFragment
-import com.banty.init.app_init.SplashFragment
 
 class MainActivity : AppCompatActivity(), MainActivityView {
 
@@ -15,7 +13,9 @@ class MainActivity : AppCompatActivity(), MainActivityView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainPresenter = MainPresenter(this, Columbus.getColumbus())
+        mainPresenter = MainPresenter(this,
+                Columbus.getColumbus(),
+                (application as App).getObjectMapper())
     }
 
     override fun onResume() {
@@ -24,15 +24,8 @@ class MainActivity : AppCompatActivity(), MainActivityView {
         mainPresenter.startInit()
     }
 
-    override fun navigateTo(flow: Flow) {
-        when (flow.getName()) {
-            "App init flow" ->
-                addFragment(SplashFragment())
-
-            "HomeFlow" ->
-                addFragment(HomeFragment())
-        }
-
+    override fun navigateTo(fragment: Fragment) {
+        addFragment(fragment)
     }
 
     private fun addFragment(fragment: Fragment) {

@@ -4,5 +4,5 @@ import androidx.fragment.app.Fragment
 import com.banty.core.Flow
 
 interface MainActivityView {
-    fun navigateTo(flow: Flow)
+    fun navigateTo(fragment: Fragment)
 }

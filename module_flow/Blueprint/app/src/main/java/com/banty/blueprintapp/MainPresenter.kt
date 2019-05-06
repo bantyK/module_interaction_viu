@@ -1,30 +1,29 @@
 package com.banty.blueprintapp
 
+import android.util.Log
+import androidx.fragment.app.Fragment
+import com.banty.blueprintapp.mapper.ObjectMapper
 import com.banty.columbus.Columbus
 import com.banty.columbus.Router
 import com.banty.core.signal.Signal
-import com.banty.home.HomeFragment
-import com.banty.init.app_init.SplashFragment
 
 /**
  * Created by Banty on 2019-05-02.
  */
-class MainPresenter(private val view: MainActivityView, private val columbus: Columbus) : Router {
+class MainPresenter(
+        private val view: MainActivityView,
+        private val columbus: Columbus,
+        private val objectMapper: ObjectMapper) : Router {
 
     fun startInit() {
         columbus.postEvent(Signal.APP_INIT_START)
+
     }
 
-    override fun navigateTo(signal: Signal) {
-        when (signal) {
-            Signal.APP_INIT_START -> {
-                view.navigateTo(SplashFragment())
-            }
-
-            Signal.SHOW_HOME -> {
-                view.navigateTo(HomeFragment())
-            }
-        }
+    override fun navigateTo(signal: Signal, payload: HashMap<String, Any>) {
+        val fragment = objectMapper.getClassName(signal).newInstance() as Fragment
+        Log.i("Viu", "Fragment name : ${fragment.javaClass.simpleName}")
+        view.navigateTo(fragment)
     }
 
     fun register() {
