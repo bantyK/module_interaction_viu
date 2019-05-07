@@ -2,11 +2,8 @@ package com.banty.blueprintapp
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import com.banty.columbus.Columbus
 import com.banty.core.Flow
-import com.banty.home.HomeFragment
-import com.banty.init.app_init.SplashFragment
 
 class MainActivity : AppCompatActivity(), MainActivityView {
 
@@ -15,32 +12,21 @@ class MainActivity : AppCompatActivity(), MainActivityView {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mainPresenter = MainPresenter(this, Columbus.getColumbus())
+        mainPresenter = MainPresenter(this,
+                Columbus.getColumbus(),
+                (application as App).getObjectMapper())
     }
 
     override fun onResume() {
         super.onResume()
         mainPresenter.register()
-        mainPresenter.startInit()
+        mainPresenter.startInit(R.id.fragment_container)
     }
 
-    override fun navigateTo(flow: Flow) {
-        when (flow.getName()) {
-            "App init flow" ->
-                addFragment(SplashFragment())
+    override fun navigateTo(module: Flow, payload: HashMap<String, Any>) {
+        payload["fragment_container"] = R.id.fragment_container
 
-            "HomeFlow" ->
-                addFragment(HomeFragment())
-        }
-
-    }
-
-    private fun addFragment(fragment: Fragment) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.fragment_container, fragment)
-                .commit()
-
-        supportActionBar?.title = (fragment as Flow).getName()
+        module.init(this, payload)
     }
 
     override fun onStop() {

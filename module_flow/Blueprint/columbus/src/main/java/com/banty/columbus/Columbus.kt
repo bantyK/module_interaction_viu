@@ -26,19 +26,11 @@ class Columbus {
         this.router = null
     }
 
-    fun postEvent(signal: Signal) {
+    fun postEvent(signal: Signal, payload: HashMap<String, Any>) {
         if (router == null)
             throw IllegalStateException("No router is registered to Columbus")
 
-        when(signal) {
-            Signal.APP_INIT_START -> {
-                router!!.navigateTo(Signal.APP_INIT_START)
-            }
-
-            Signal.SHOW_HOME -> {
-                router!!.navigateTo(Signal.SHOW_HOME)
-            }
-        }
+        router!!.navigateTo(signal, payload)
 
     }
 }

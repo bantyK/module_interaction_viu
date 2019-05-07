@@ -5,5 +5,8 @@ package com.banty.core.signal
  */
 enum class Signal {
     APP_INIT_START,
-    SHOW_HOME
+
+    SHOW_HOME,
+
+    START_AUTH
 }

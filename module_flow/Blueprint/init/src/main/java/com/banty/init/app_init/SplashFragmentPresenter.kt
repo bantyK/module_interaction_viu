@@ -53,7 +53,7 @@ class SplashFragmentPresenter(private val appInitStateMachine: AppInitStateMachi
     }
 
     fun sendAppInitSuccessSignal() {
-        Columbus.getColumbus().postEvent(Signal.SHOW_HOME)
+        Columbus.getColumbus().postEvent(Signal.START_AUTH, HashMap())
     }
 
     fun stateAppInit() {

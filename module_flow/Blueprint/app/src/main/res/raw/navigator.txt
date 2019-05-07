@@ -1,0 +1,3 @@
+APP_INIT_START@com.banty.init.AppInitFlow
+SHOW_HOME@com.banty.home.HomeFlow
+START_AUTH@com.banty.auth.AuthBlock
