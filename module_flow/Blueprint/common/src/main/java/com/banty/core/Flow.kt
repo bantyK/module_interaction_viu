@@ -1,6 +1,7 @@
 package com.banty.core
 
 import android.content.Context
+import com.banty.core.signal.Signal
 
 /**
  * Created by Banty on 2019-05-06.
@@ -8,6 +9,6 @@ import android.content.Context
  * Interface to be implemented by all the flows and blocks.
  */
 interface Flow {
-
-    fun init(context: Context, payload: HashMap<String, Any> = HashMap())
+    fun init(context: Context, payload: HashMap<String, Any>)
+    fun await(signal: Signal)
 }

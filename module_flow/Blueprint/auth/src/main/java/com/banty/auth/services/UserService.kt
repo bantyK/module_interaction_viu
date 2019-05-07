@@ -8,7 +8,7 @@ import kotlinx.coroutines.delay
 class UserService() {
 
     suspend fun getUserId() : String {
-        delay(1_000)
+//        delay(1_000)
         return "u-123"
     }
 

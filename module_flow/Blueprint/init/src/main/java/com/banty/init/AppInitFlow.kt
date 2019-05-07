@@ -3,6 +3,7 @@ package com.banty.init
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import com.banty.core.Flow
+import com.banty.core.signal.Signal
 import com.banty.init.app_init.SplashFragment
 
 /**
@@ -17,5 +18,9 @@ class AppInitFlow : Flow {
                 .beginTransaction()
                 .replace(fragmentContainer, SplashFragment())
                 .commit()
+    }
+
+    override fun await(signal: Signal) {
+
     }
 }

@@ -8,5 +8,13 @@ enum class Signal {
 
     SHOW_HOME,
 
-    START_AUTH
+    START_AUTH,
+
+    SUBS_STATUS,
+
+    SUBS_REQ,
+
+    PLAY,
+
+    PLAY_SUCCESS
 }
