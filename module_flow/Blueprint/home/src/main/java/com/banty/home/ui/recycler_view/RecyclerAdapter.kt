@@ -6,12 +6,16 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.banty.core.model.Clip
 import com.banty.home.R
+import com.banty.home.ui.ClipClickListener
 import com.bumptech.glide.Glide
 
 /**
  * Created by Banty on 2019-05-02.
  */
-class RecyclerAdapter(val context: Context, val clipList: List<Clip>) : RecyclerView.Adapter<RecyclerViewHolder>() {
+class RecyclerAdapter(
+        private val context: Context,
+        private val clipList: List<Clip>,
+        private val clipClickListener: ClipClickListener) : RecyclerView.Adapter<RecyclerViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
         val inflater = LayoutInflater.from(context)
         val view = inflater.inflate(R.layout.recycler_item, parent, false)
@@ -28,5 +32,9 @@ class RecyclerAdapter(val context: Context, val clipList: List<Clip>) : Recycler
                 .into(holder.imageView)
 
         holder.textView.text = clipList[position].title
+
+        holder.imageView.setOnClickListener {
+            clipClickListener.clipClicked(clipList[position])
+        }
     }
 }

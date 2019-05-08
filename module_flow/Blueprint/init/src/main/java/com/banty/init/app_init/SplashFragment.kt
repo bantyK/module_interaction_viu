@@ -27,7 +27,7 @@ class SplashFragment : Fragment(), AppInitStateMachine, CoroutineScope {
     private lateinit var presenter: SplashFragmentPresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Log.d("Viu", "App init flow started")
+        Log.d("Viu", "App start flow started")
         return inflater.inflate(R.layout.splash_fragment, container, false)
     }
 
@@ -53,7 +53,7 @@ class SplashFragment : Fragment(), AppInitStateMachine, CoroutineScope {
 
         if (status == Status.FAILED) {
             if (state == AppInitStates.CHECK_APP_UPGRADE)
-            // send APP_UPGRADE_REQ status to columbus and halt the app init
+            // send APP_UPGRADE_REQ status to columbus and halt the app start
                 return
             else if (state == AppInitStates.CHECK_NETWORK) {
                 textView_splash.text = textView_splash.text.toString() + message
@@ -106,6 +106,6 @@ class SplashFragment : Fragment(), AppInitStateMachine, CoroutineScope {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Viu", "App init flow destroyed")
+        Log.d("Viu", "App start flow destroyed")
     }
 }

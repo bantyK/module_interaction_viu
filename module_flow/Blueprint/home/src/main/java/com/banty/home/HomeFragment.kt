@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.banty.core.model.Clip
+import com.banty.home.ui.ClipClickListener
 import com.banty.home.ui.IHomePresenter
 import com.banty.home.ui.presenter.HomePresenter
 import com.banty.home.ui.recycler_view.RecyclerAdapter
@@ -18,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_home.*
 /**
  * Created by Banty on 2019-05-02.
  */
-class HomeFragment : Fragment(), IHomePresenter.HomeView {
+class HomeFragment : Fragment(), IHomePresenter.HomeView, ClipClickListener {
     private lateinit var homePresenter: HomePresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -43,7 +44,7 @@ class HomeFragment : Fragment(), IHomePresenter.HomeView {
         recyclerView?.let {
             recyclerView.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             recyclerView.setHasFixedSize(true)
-            recyclerView.adapter = RecyclerAdapter(context, clips)
+            recyclerView.adapter = RecyclerAdapter(context, clips, this)
         }
     }
 
@@ -76,6 +77,10 @@ class HomeFragment : Fragment(), IHomePresenter.HomeView {
     override fun onDestroy() {
         super.onDestroy()
         Log.d("Viu", "Home flow destroyed")
+    }
+
+    override fun clipClicked(clip: Clip) {
+        homePresenter.handleClipClickAction(clip)
     }
 
 }

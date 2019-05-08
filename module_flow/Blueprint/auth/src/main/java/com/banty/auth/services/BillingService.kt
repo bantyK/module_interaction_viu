@@ -8,7 +8,7 @@ import kotlinx.coroutines.delay
 class BillingService {
 
     suspend fun getBillingStatus(userId: String): String {
-        delay(1_000)
+//        delay(1_000)
         return "PREMIUM"
     }
 }
