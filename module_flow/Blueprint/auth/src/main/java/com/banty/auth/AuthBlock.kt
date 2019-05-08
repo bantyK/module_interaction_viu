@@ -14,7 +14,7 @@ class AuthBlock : Flow{
 
     }
 
-    override fun init(context: Context, payload: HashMap<String, Any>) {
+    override fun start(context: Context, payload: HashMap<String, Any>) {
         GlobalScope.launch {
             AuthService().startUserAuthentication(context, payload)
         }

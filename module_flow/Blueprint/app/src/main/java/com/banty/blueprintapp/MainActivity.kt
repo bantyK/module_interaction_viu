@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity(), MainActivityView {
     override fun navigateTo(module: Flow, payload: HashMap<String, Any>) {
         payload["fragment_container"] = R.id.fragment_container
 
-        module.init(this, payload)
+        module.start(this, payload)
     }
 
     override fun onStop() {

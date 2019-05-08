@@ -1,5 +1,6 @@
 package com.banty.columbus
 
+import com.banty.core.Flow
 import com.banty.core.signal.Signal
 
 
@@ -35,11 +36,10 @@ class Columbus {
      * but waiting for some other event to proceed further. On getting this value, Columbus will keep this flow in waiting state and resume its
      * operation when it receives the awaitSignal.
      * */
-    fun postEvent(signal: Signal, payload: HashMap<String, Any>, awaitSignal:Signal? = null) {
+    fun postEvent(signal: Signal, payload: HashMap<String, Any>, awaitSignal:Signal? = null, waitingFlow: Flow? = null) {
         if (router == null)
             throw IllegalStateException("No router is registered to Columbus")
 
-        router!!.navigateTo(signal, payload, awaitSignal)
-
+        router!!.navigateTo(signal, payload, awaitSignal, waitingFlow)
     }
 }

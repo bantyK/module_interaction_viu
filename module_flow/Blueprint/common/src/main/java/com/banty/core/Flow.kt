@@ -9,6 +9,6 @@ import com.banty.core.signal.Signal
  * Interface to be implemented by all the flows and blocks.
  */
 interface Flow {
-    fun init(context: Context, payload: HashMap<String, Any>)
+    fun start(context: Context, payload: HashMap<String, Any>)
     fun await(signal: Signal)
 }

@@ -11,9 +11,10 @@ import com.banty.core.signal.Signal
  * Created by Banty on 2019-05-02.
  */
 class MainRouter(
-        private val view: MainActivityView,
-        private val columbus: Columbus,
-        private val objectMapper: ObjectMapper) : Router {
+    private val view: MainActivityView,
+    private val columbus: Columbus,
+    private val objectMapper: ObjectMapper
+) : Router {
 
     /**
      * List of all the active flows
@@ -32,27 +33,28 @@ class MainRouter(
         columbus.postEvent(Signal.APP_INIT_START, payload)
     }
 
-    override fun navigateTo(signal: Signal, payload: HashMap<String, Any>, awaitSignal: Signal?) {
+    override fun navigateTo(signal: Signal, payload: HashMap<String, Any>, awaitSignal: Signal?, awaitingFlow: Flow?) {
         val flowList = waitingFlows[signal]
-        if (flowList != null  && anyFlowWaitingForSignal(signal, flowList)) {
+        if (flowList != null && anyFlowWaitingForSignal(signal, flowList)) {
             // there are flows which is waiting for this event to occur.
             for (flow in flowList) {
-                flow.await(signal)
+//                view.navigateTo(flow, payload)
+                flow.await(Signal.SUBS_STATUS)
                 flowList.remove(flow)
             }
         } else {
             val flow = objectMapper.getClassName(signal).newInstance() as Flow
             Log.i("Viu", "Fragment name : ${flow.javaClass.simpleName}")
-            addWaitingFlow(flow, signal, awaitSignal)
+            addWaitingFlow(awaitingFlow, awaitSignal)
             view.navigateTo(flow, payload)
         }
     }
 
     private fun anyFlowWaitingForSignal(signal: Signal, flowList: ArrayList<Flow>?) =
-            flowList != null && flowList.isNotEmpty() && waitingFlows.containsKey(signal)
+        flowList != null && flowList.isNotEmpty() && waitingFlows.containsKey(signal)
 
-    private fun addWaitingFlow(flow: Flow, signal: Signal, awaitSignal: Signal?) {
-        if (awaitSignal != null) {
+    private fun addWaitingFlow(flow: Flow?, awaitSignal: Signal?) {
+        if (awaitSignal != null && flow != null) {
             if (waitingFlows[awaitSignal] == null) {
                 waitingFlows[awaitSignal] = ArrayList()
             }

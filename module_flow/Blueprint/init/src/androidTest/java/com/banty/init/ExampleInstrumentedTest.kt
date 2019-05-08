@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.banty.init.test", appContext.packageName)
+        assertEquals("com.banty.start.test", appContext.packageName)
     }
 }

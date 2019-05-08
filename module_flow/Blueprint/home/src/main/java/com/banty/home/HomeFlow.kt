@@ -13,7 +13,7 @@ class HomeFlow : Flow {
 
     }
 
-    override fun init(context: Context, payload: HashMap<String, Any>) {
+    override fun start(context: Context, payload: HashMap<String, Any>) {
 
         if (payload.containsKey("fragment_container")) {
             val fragmentContainer = payload["fragment_container"] as Int
