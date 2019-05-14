@@ -30,6 +30,9 @@ dependencies {
     implementation project(':init')
     implementation project(':home')
     implementation project(':columbus')
+    implementation project(':auth')
+    implementation project(':player')
+    implementation project(':subscription')
 
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -38,6 +41,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.1.1"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.1.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.2.1"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.1"
 }

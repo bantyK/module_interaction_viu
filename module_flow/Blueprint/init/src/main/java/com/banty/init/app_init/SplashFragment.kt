@@ -7,7 +7,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.banty.core.Flow
 import com.banty.init.R
 import kotlinx.android.synthetic.main.splash_fragment.*
 import kotlinx.coroutines.*
@@ -16,7 +15,7 @@ import kotlin.coroutines.CoroutineContext
 /**
  * Created by Banty on 2019-05-02.
  */
-class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
+class SplashFragment : Fragment(), AppInitStateMachine, CoroutineScope {
     val job = Job()
 
     override val coroutineContext: CoroutineContext
@@ -25,14 +24,10 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
 
     var message = ""
 
-    override fun getName(): String {
-        return "App init flow"
-    }
-
     private lateinit var presenter: SplashFragmentPresenter
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Log.d("Viu", "App init flow started")
+        Log.d("Viu", "App start flow started")
         return inflater.inflate(R.layout.splash_fragment, container, false)
     }
 
@@ -58,7 +53,7 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
 
         if (status == Status.FAILED) {
             if (state == AppInitStates.CHECK_APP_UPGRADE)
-            // send APP_UPGRADE_REQ status to columbus and halt the app init
+            // send APP_UPGRADE_REQ status to columbus and halt the app start
                 return
             else if (state == AppInitStates.CHECK_NETWORK) {
                 textView_splash.text = textView_splash.text.toString() + message
@@ -111,6 +106,6 @@ class SplashFragment : Fragment(), AppInitStateMachine, Flow, CoroutineScope {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("Viu", "App init flow destroyed")
+        Log.d("Viu", "App start flow destroyed")
     }
 }
