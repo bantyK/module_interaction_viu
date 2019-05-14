@@ -1,4 +1,10 @@
 package offer
 
-class OfferFlow {
+import base.Flow
+
+class OfferFlow : Flow() {
+    override fun start(context: String) {
+
+    }
+
 }
