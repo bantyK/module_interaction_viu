@@ -3,7 +3,6 @@ package base
 /*  When a flow generate a routeEvent, the parameters indicates the following
     nextSignal -> signal which indicates the flow which the existing flow want to trigger
     waitingSignal -> signal which indicates the flow which the flow might wait for
-
  */
 data class RouteEvent(
     val nextSignal: String,

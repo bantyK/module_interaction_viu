@@ -18,6 +18,7 @@ class SubscriptionFlow : Flow() {
         println("Subscription complete")
         launch {
             delay(5_00)
+            UserSubStatus.setPremium()
             Columbus.getColumbus().route(
                 RouteEvent(
                     "SUB_STATUS",

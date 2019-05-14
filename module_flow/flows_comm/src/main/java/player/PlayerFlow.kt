@@ -15,7 +15,7 @@ class PlayerFlow : Flow() {
         launch {
             delay(1_000)
             if(!UserSubStatus.isPremium()) {
-                println("Launching subscription flow")
+                println("Player flow is launching subscription flow")
                 Columbus.getColumbus().route(
                     RouteEvent(
                         "SUBS_REQ",
@@ -24,7 +24,7 @@ class PlayerFlow : Flow() {
                     )
                 )
             } else {
-                println("")
+                println("Player flow : Playing the clip")
             }
         }
     }
