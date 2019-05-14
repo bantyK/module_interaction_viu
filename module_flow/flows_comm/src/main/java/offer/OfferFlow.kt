@@ -1,0 +1,4 @@
+package offer
+
+class OfferFlow {
+}

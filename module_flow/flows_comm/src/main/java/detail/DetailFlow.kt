@@ -1,0 +1,4 @@
+package detail
+
+class DetailFlow {
+}

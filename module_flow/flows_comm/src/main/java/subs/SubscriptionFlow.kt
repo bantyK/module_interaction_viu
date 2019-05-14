@@ -1,0 +1,4 @@
+package subs
+
+class SubscriptionFlow {
+}
