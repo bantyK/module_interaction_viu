@@ -9,10 +9,18 @@ class MainRouter(
         updateFlowSignalMap(routeEvent)
         // check waiting map first, if there is a flow which is waiting for this signal
         if (flowManager.isFlowWaitingForSignal(routeEvent.nextSignal)) {
-            flowManager.getFlow(routeEvent.nextSignal).start("activity")
+            handleWaitingFlow(routeEvent)
         } else {
             flowSignalMapper.getFlowFromSignal(routeEvent.nextSignal).start("activity")
         }
+    }
+
+    private fun handleWaitingFlow(routeEvent: RouteEvent) {
+        val flow = flowManager.getFlow(routeEvent.nextSignal)
+        if (flow != null)
+            flow.start("activity")
+        else
+            throw NoFlowFoundException("Flow must be specified")
     }
 
 
