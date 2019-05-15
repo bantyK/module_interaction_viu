@@ -36,6 +36,9 @@ class SignalResolver(private val queueManager: QueueManager) {
     }
 
     private fun removeSignal(highSignal: Signal, currentSignal: Signal) {
+        if(queueManager.signalPresentInWaitingQueues(currentSignal)) {
+
+        }
         if (highSignal.waitingSignal == null) {
             queueManager.removeSignal(highSignal)
         } else if (currentSignal.startSignal == highSignal.waitingSignal) {

@@ -49,24 +49,29 @@ class QueueManager {
     fun findWaitingFlow(signal: Signal): Flow? {
         println("Any flow waiting for \"${signal.startSignal}\"?")
 
-        var flow = findWaitingFlow(signal.startSignal, lowFlowQueue)
+        var flow = findWaitingFlow(signal, lowFlowQueue)
 
         if (flow == null) {
-            flow = findWaitingFlow(signal.startSignal, mediumFlowQueue)
+            flow = findWaitingFlow(signal, mediumFlowQueue)
         }
 
         if (flow == null) {
-            flow = findWaitingFlow(signal.startSignal, highFlowQueue)
+            flow = findWaitingFlow(signal, highFlowQueue)
         }
 
         return flow
     }
 
-    private fun findWaitingFlow(signal: String, stack: Stack<Signal>): Flow? {
+    private fun findWaitingFlow(signal: Signal, stack: Stack<Signal>): Flow? {
+        return findWaitingSignal(signal, stack)?.waitingFlow
+
+    }
+
+    private fun findWaitingSignal(signal:Signal, stack: Stack<Signal>) : Signal? {
         for (item in stack) {
-            if (item.waitingSignal == signal) {
+            if (item.waitingSignal == signal.startSignal) {
                 println("Flow waiting signal\"$signal\" found: $item")
-                return item.waitingFlow
+                return item
             }
         }
         return null
