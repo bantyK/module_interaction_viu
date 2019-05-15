@@ -1,9 +1,21 @@
 package detail
 
 import base.Flow
+import base.FlowPriority
 
 class DetailFlow : Flow() {
+    override fun getPriority(): FlowPriority =
+        FlowPriority.HIGH
+
+
+    override fun getStartSignal() = "CLIP_DETAIL"
+
+
+    override fun getEndSignal() =
+        "DETAIL_END"
+
+
     override fun start(context: String) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        println("Flow launched ${this.javaClass.simpleName}")
     }
 }

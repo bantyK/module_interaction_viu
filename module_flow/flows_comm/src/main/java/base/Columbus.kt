@@ -1,19 +1,20 @@
 package base
 
-class Columbus {
+class Columbus() {
 
-    // Expose a method to add a signal-flow pair in the map
-    // after adding, sort it based on priority
+    private lateinit var router: IRouter
 
-    private lateinit var router: Router
+    private val queueManager = QueueManager()
 
-    fun registerRouter(router: Router) {
+    private val signalResolver = SignalResolver(queueManager)
+
+    fun registerRouter(router: IRouter) {
         this.router = router
     }
 
     companion object {
-
         private var INSTANCE: Columbus? = null
+
         fun getColumbus(): Columbus {
             synchronized(Columbus::class) {
                 if (INSTANCE == null) {
@@ -24,11 +25,10 @@ class Columbus {
         }
     }
 
-    fun route(routeEvent: RouteEvent) {
-        router.route(routeEvent)
-    }
 
-    fun addRoutereventInMap(routeEvent: RouteEvent) {
-        router.addRoute(routeEvent)
+    fun submit(signal: Signal) {
+        queueManager.submitSignal(signal)
+        val flow = signalResolver.handle(signal)
+        router.submit(flow)
     }
 }

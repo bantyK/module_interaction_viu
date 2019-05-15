@@ -8,5 +8,14 @@ abstract class Flow : CoroutineScope {
     override val coroutineContext: CoroutineContext
         get() = Job()
 
-    abstract fun start(context:String)
+    abstract fun start(context: String)
+
+    abstract fun getStartSignal(): String
+
+    abstract fun getEndSignal(): String
+
+    abstract fun getPriority(): FlowPriority
+
+    override fun toString(): String =
+        "(${this.javaClass.simpleName}, ${getStartSignal()}, ${getEndSignal()}, #${getPriority()})"
 }

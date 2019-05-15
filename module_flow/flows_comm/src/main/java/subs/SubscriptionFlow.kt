@@ -2,15 +2,15 @@ package subs
 
 import base.Columbus
 import base.Flow
-import base.RouteEvent
+import base.FlowPriority
+import base.Signal
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
 class SubscriptionFlow : Flow() {
 
     override fun start(context: String) {
-        println("Launching subscription flow")
-
+        println("Flow launched ${this.javaClass.simpleName}")
         startSubscription()
     }
 
@@ -19,8 +19,8 @@ class SubscriptionFlow : Flow() {
         launch {
             delay(5_00)
             UserSubStatus.setPremium()
-            Columbus.getColumbus().route(
-                RouteEvent(
+            Columbus.getColumbus().submit(
+                Signal(
                     "SUB_STATUS",
                     null,
                     null
@@ -28,4 +28,10 @@ class SubscriptionFlow : Flow() {
             )
         }
     }
+
+    override fun getStartSignal(): String  = "SUB_REQ"
+
+    override fun getEndSignal(): String  = "SUB_STATUS"
+
+    override fun getPriority(): FlowPriority = FlowPriority.LOW
 }

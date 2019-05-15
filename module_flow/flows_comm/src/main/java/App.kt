@@ -1,16 +1,16 @@
 import base.*
+import deeplink.DeeplinkListener
 
 fun main() {
 
-    val mainRouter = MainRouter(
-        FlowManager(),
-        FlowSignalMapper()
-    )
+    val mainRouter = NavigationManager()
 
     Columbus.getColumbus().registerRouter(mainRouter)
 
-    Columbus.getColumbus().route(
-        RouteEvent(
+//    DeeplinkListener().emitDeeplinkSignal()
+
+    Columbus.getColumbus().submit(
+        Signal(
             "SHOW_HOME",
             null,
             null
