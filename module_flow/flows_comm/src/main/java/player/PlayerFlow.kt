@@ -23,16 +23,6 @@ class PlayerFlow : Flow() {
             )
         } else {
             println("Player flow : Playing the clip")
-/*
-                delay(5_00)
-                Columbus.getColumbus().submit(
-                    Signal(
-                        "SHOW_OFFER",
-                        null,
-                        null
-                    )
-                )
-*/
         }
 
     }

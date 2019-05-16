@@ -1,6 +1,6 @@
 package base
 
-enum class FlowPriority() {
+enum class FlowPriority {
     LOW,
     MEDIUM,
     HIGH

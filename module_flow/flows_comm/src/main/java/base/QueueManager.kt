@@ -11,7 +11,6 @@ class QueueManager {
     private val lowSignalQueue = Stack<Signal>()
 
     fun submitSignal(signal: Signal) {
-        println("\n\nNew signal: \n\t$signal")
         when {
             signalPresentInWaitingQueues(signal) -> println("Signal found in waiting:\n\t$signal")
 
@@ -75,7 +74,6 @@ class QueueManager {
     private fun findWaitingSignal(signal: Signal, stack: Stack<Signal>): Signal? {
         for (item in stack) {
             if (item.waitingSignal == signal.startSignal) {
-                println("Flow waiting signal\"$signal\" found: $item")
                 return item
             }
         }
@@ -99,7 +97,7 @@ class QueueManager {
         printQueues()
     }
 
-    fun getPrioritySignal(currentSignal: Signal): Signal? {
+    fun getPrioritySignal(): Signal? {
         //check if some flow is waiting, if yes - process signal right away
 
         var signal = getSignalFromQueue(highSignalQueue)
@@ -113,9 +111,5 @@ class QueueManager {
 
     private fun getSignalFromQueue(queue: Stack<Signal>): Signal? =
         if (queue.isNotEmpty()) queue.peek() else null
-
-    fun addSignal() {
-
-    }
 
 }

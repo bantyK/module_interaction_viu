@@ -2,7 +2,7 @@ package base
 
 
 data class Signal(
-    val startSignal: String,
+    val startSignal: String?,
     val waitingSignal: String?,
     val waitingFlow: Flow?
 ) {

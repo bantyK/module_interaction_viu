@@ -8,7 +8,7 @@ import subs.SubscriptionFlow
 
 class FlowSignalMapper {
 
-    fun getFlowFromSignal(signal: String): Flow {
+    fun getFlowFromSignal(signal: String): Flow? {
         when (signal) {
             "SHOW_HOME" -> return HomeFlow()
             "PLAY" -> return PlayerFlow()
@@ -16,7 +16,7 @@ class FlowSignalMapper {
             "CLIP_DETAIL" -> return DetailFlow()
             "SHOW_OFFER" -> return OfferFlow()
         }
-        throw NoFlowFoundException("Flow not available to handle signal : $signal")
+        return null
     }
 
 }
