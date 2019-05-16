@@ -1,4 +1,6 @@
-import base.*
+import base.Columbus
+import base.NavigationManager
+import base.Signal
 import deeplink.DeeplinkListener
 
 fun main() {
@@ -7,7 +9,11 @@ fun main() {
 
     Columbus.getColumbus().registerRouter(mainRouter)
 
-//    DeeplinkListener().emitDeeplinkSignal()
+    Thread(Runnable {
+        Thread.sleep(4_000)
+        DeeplinkListener().emitDeeplinkSignal()
+    }).start()
+
     Columbus.getColumbus().submit(
         Signal(
             "SHOW_HOME",

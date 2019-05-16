@@ -3,33 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="83cea2a1-4d23-4779-82ef-279ae7995f1d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/base/Flow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/Flow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/base/FlowPriority.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/FlowPriority.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/base/FlowSignalMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/FlowSignalMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/base/QueueManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/QueueManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/base/SignalResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/SignalResolver.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/deeplink/DeeplinkListener$emitDeeplinkSignal$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/deeplink/DeeplinkListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/deeplink/DeeplinkListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/detail/DetailFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/detail/DetailFlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/home/HomeFlow$start$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/home/HomeFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/home/HomeFlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/offer/OfferFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/offer/OfferFlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/player/PlayerFlow$start$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/player/PlayerFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/player/PlayerFlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/subs/SubscriptionFlow$startSubscription$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/subs/SubscriptionFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/subs/SubscriptionFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/AppKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/AppKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/META-INF/flows_comm_main.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/deeplink/DeeplinkListener.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Flow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/Flow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/FlowPriority.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/FlowPriority.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/FlowSignalMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/FlowSignalMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/QueueManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/QueueManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/SignalResolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/SignalResolver.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/home/HomeFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/home/HomeFlow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/offer/OfferFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/offer/OfferFlow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -75,14 +52,14 @@
         <counts>
           <entry key="gradle" value="2" />
           <entry key="java" value="5" />
-          <entry key="kt" value="10971" />
+          <entry key="kt" value="11057" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
           <entry key="JAVA" value="5" />
-          <entry key="Kotlin" value="10971" />
+          <entry key="Kotlin" value="11057" />
         </counts>
       </usages-collector>
     </session>
@@ -149,10 +126,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-end-line="19" />
+            <state relative-caret-position="20">
+              <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
               <folding>
-                <element signature="e#0#46#0" expanded="true" />
+                <element signature="e#0#83#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -709,24 +686,6 @@
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
-            <path>
-              <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.0.0" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.0.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlinx-coroutines-core-common-1.0.0.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Gradle: org.jetbrains.kotlinx:kotlinx-coroutines-core-common:1.0.0" type="70bed36:NamedLibraryElementNode" />
-              <item name="kotlinx-coroutines-core-common-1.0.0.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="coroutines" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -737,7 +696,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557996808075" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1557998030323" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Console Font" />
   </component>
@@ -852,7 +811,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32997987" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.42465752" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42465752" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39936775" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -875,18 +834,6 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt</url>
-          <line>9</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="evaluateExpression">
@@ -1105,10 +1052,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="18" column="31" lean-forward="true" selection-start-line="18" selection-end-line="19" />
+        <state relative-caret-position="20">
+          <caret line="1" column="29" selection-start-line="1" selection-start-column="29" selection-end-line="1" selection-end-column="29" />
           <folding>
-            <element signature="e#0#46#0" expanded="true" />
+            <element signature="e#0#83#0" expanded="true" />
           </folding>
         </state>
       </provider>
