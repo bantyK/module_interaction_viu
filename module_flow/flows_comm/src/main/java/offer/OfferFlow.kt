@@ -12,8 +12,8 @@ class OfferFlow : Flow(){
         return "OFFER_END"
     }
 
-    override fun getPriority(): FlowPriority {
-        return FlowPriority.HIGH
+    override fun getPriorityLevel(): FlowPriority {
+        return FlowPriority.LOW
     }
 
     override fun start(context: String) {

@@ -8,7 +8,6 @@ fun main() {
     Columbus.getColumbus().registerRouter(mainRouter)
 
 //    DeeplinkListener().emitDeeplinkSignal()
-
     Columbus.getColumbus().submit(
         Signal(
             "SHOW_HOME",

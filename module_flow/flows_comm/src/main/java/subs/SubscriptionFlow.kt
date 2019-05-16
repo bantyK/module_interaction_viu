@@ -4,6 +4,7 @@ import base.Columbus
 import base.Flow
 import base.FlowPriority
 import base.Signal
+import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
@@ -16,8 +17,8 @@ class SubscriptionFlow : Flow() {
 
     private fun startSubscription() {
         println("Subscription complete")
-        launch {
-            delay(5_00)
+
+            Thread.sleep(5_00)
             UserSubStatus.setPremium()
             Columbus.getColumbus().submit(
                 Signal(
@@ -26,12 +27,11 @@ class SubscriptionFlow : Flow() {
                     null
                 )
             )
-        }
     }
 
     override fun getStartSignal(): String  = "SUB_REQ"
 
     override fun getEndSignal(): String  = "SUB_STATUS"
 
-    override fun getPriority(): FlowPriority = FlowPriority.LOW
+    override fun getPriorityLevel(): FlowPriority = FlowPriority.LOW
 }

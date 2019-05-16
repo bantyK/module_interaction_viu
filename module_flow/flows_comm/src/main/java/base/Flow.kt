@@ -14,8 +14,8 @@ abstract class Flow : CoroutineScope {
 
     abstract fun getEndSignal(): String
 
-    abstract fun getPriority(): FlowPriority
+    abstract fun getPriorityLevel(): FlowPriority
 
     override fun toString(): String =
-        "(${this.javaClass.simpleName}, ${getStartSignal()}, ${getEndSignal()}, #${getPriority()})"
+        "(${this.javaClass.simpleName}, ${getStartSignal()}, ${getEndSignal()}, #${getPriorityLevel()})"
 }

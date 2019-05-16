@@ -1,10 +1,12 @@
 package detail
 
+import base.Columbus
 import base.Flow
 import base.FlowPriority
+import base.Signal
 
 class DetailFlow : Flow() {
-    override fun getPriority(): FlowPriority =
+    override fun getPriorityLevel(): FlowPriority =
         FlowPriority.HIGH
 
 
@@ -16,6 +18,14 @@ class DetailFlow : Flow() {
 
 
     override fun start(context: String) {
-        println("Flow launched ${this.javaClass.simpleName}")
+        println("Flow launched ${this@DetailFlow.javaClass.simpleName}")
+        Columbus.getColumbus().submit(
+            Signal(
+                getEndSignal(),
+                null,
+                null
+            )
+        )
+
     }
 }
