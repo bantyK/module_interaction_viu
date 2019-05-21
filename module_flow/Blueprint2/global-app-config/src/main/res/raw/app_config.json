@@ -23,7 +23,6 @@
           "launcher_module": "com.vuclip.viu2.init_feature.AppInitLauncher"
         }
       },
-
       "feature_info": {
         "name": "App Initialization",
         "desc": "inits the app",
@@ -41,7 +40,9 @@
         "runs_in_background": true,
         "needs_permissions": "none",
         "needs_ui": false,
-        "dependencies": ["signup"],
+        "dependencies": [
+          "signup"
+        ],
         "NOTE": "<we can add more>"
       },
       "feature_config": {
@@ -80,13 +81,38 @@
           }
         },
         {
+          "component_id": "network",
+          "component_props": {
+            "has_ui": false,
+            "runs_in_background": true,
+            "needs_permissions": "none",
+            "needs_ui": false,
+            "dependencies": [],
+            "NOTE": "<we can add more>"
+          },
+          "component_info": {
+            "desc": "Initializes the device",
+            "NOTE": "<we can add more>"
+          },
+          "component_config": {
+            "read_gaid": true,
+            "read_device_id": false
+          },
+          "component_state_machine": {
+            "start": "INIT_NETWORK",
+            "end": "NETWORK_READY"
+          }
+        },
+        {
           "component_id": "location",
           "component_props": {
             "has_ui": false,
             "runs_in_background": true,
             "needs_permissions": "none",
             "needs_ui": false,
-            "dependencies": ["network"],
+            "dependencies": [
+              "network"
+            ],
             "NOTE": "<we can add more>"
           },
           "component_info": {
@@ -110,7 +136,10 @@
             "runs_in_background": false,
             "needs_permissions": "gps",
             "needs_ui": true,
-            "dependencies": ["location", "network"],
+            "dependencies": [
+              "location",
+              "network"
+            ],
             "NOTE": "<we can add more>"
           },
           "component_info": {
@@ -126,7 +155,8 @@
             "end": "GPS_CHECK_END"
           }
         }
-      ]    }
+      ]
+    }
   ],
   "core_components": {
     "http": {},

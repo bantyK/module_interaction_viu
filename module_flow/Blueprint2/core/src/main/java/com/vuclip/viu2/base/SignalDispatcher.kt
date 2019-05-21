@@ -2,7 +2,7 @@ package com.vuclip.viu2.base
 
 import com.vuclip.viu2.app_config.model.feature.FeatureComponent
 
-interface BaseComponent {
+interface SignalDispatcher {
 
-    fun invoke(component: FeatureComponent)
+    fun onSignalReceived(signal:String, component: FeatureComponent)
 }

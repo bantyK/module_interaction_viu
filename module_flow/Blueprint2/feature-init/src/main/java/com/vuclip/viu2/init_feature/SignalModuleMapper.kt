@@ -1,16 +1,18 @@
 package com.vuclip.viu2.init_feature
 
-import com.vuclip.viu2.base.BaseComponent
-import com.vuclip.viu2.device.DeviceComponent
-import com.vuclip.viu2.gps.GpsLocationComponent
-import com.vuclip.viu2.location.LocationComponent
+import com.vuclip.viu2.base.Invokable
+import com.vuclip.viu2.device.Device
+import com.vuclip.viu2.gps.GpsLocation
+import com.vuclip.viu2.location.Location
+import com.vuclip.viu2.programming.Programming
 
 class SignalModuleMapper {
-    fun getModule(componentId: String) : BaseComponent? {
+    fun getModule(componentId: String) : Invokable? {
         when(componentId) {
-            "init_device" -> return DeviceComponent()
-            "location" -> return LocationComponent()
-            "gps_location" -> return GpsLocationComponent()
+            "init_device" -> return Device()
+            "location" -> return Location()
+            "gps_location" -> return GpsLocation()
+            "network" -> return Programming()
         }
 
         return null
