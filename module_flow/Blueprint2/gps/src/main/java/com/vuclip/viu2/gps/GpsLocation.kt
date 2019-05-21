@@ -8,6 +8,8 @@ import com.vuclip.viu2.base.SignalDispatcher
 class GpsLocation : Invokable {
     override fun invoke(component: FeatureComponent, signalDispatcher: SignalDispatcher) {
         Log.d("Viu", "${Thread.currentThread().name} -> Gps location component invoke")
+        Thread.sleep(2000)
+        signalDispatcher.onSignalReceived(component.componentStateMachine.end, component)
     }
 
 

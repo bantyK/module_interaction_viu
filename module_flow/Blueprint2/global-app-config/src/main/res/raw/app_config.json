@@ -138,7 +138,8 @@
             "needs_ui": true,
             "dependencies": [
               "location",
-              "network"
+              "network",
+              "init_device"
             ],
             "NOTE": "<we can add more>"
           },

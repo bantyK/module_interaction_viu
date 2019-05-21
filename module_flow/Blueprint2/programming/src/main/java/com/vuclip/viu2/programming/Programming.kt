@@ -8,6 +8,5 @@ import com.vuclip.viu2.base.SignalDispatcher
 class Programming : Invokable {
     override fun invoke(component: FeatureComponent, signalDispatcher: SignalDispatcher) {
         Log.d("Viu", "Programming component invoke")
-
     }
 }
