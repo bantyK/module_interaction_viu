@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83cea2a1-4d23-4779-82ef-279ae7995f1d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/base/QueueManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/QueueManager.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/classes/base/Signal.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/Signal.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/AppKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/AppKt$main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/base/SignalResolver.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/base/SignalResolver.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/detail/DetailFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/detail/DetailFlow.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/player/PlayerFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/player/PlayerFlow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/FlowPriority.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/FlowPriority.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/FlowSignalMapper.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/FlowSignalMapper.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/QueueManager.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/QueueManager.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/base/Signal.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/Signal.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/subs/SubscriptionFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/subs/SubscriptionFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/App.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/App.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/base/SignalResolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/base/SignalResolver.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/.gradle/" />
@@ -28,44 +30,51 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-390003584">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="6" />
+          <entry key="project.closed" value="8" />
           <entry key="project.open.time.0" value="3" />
           <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.5" value="2" />
-          <entry key="project.open.time.6" value="2" />
-          <entry key="project.opened" value="8" />
+          <entry key="project.open.time.5" value="3" />
+          <entry key="project.open.time.6" value="3" />
+          <entry key="project.opened" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="gradle" value="1" />
           <entry key="java" value="2" />
-          <entry key="kt" value="107" />
+          <entry key="kt" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
           <entry key="JAVA" value="2" />
-          <entry key="Kotlin" value="107" />
+          <entry key="Kotlin" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gradle" value="2" />
           <entry key="java" value="5" />
-          <entry key="kt" value="11513" />
+          <entry key="kt" value="11621" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Groovy" value="2" />
           <entry key="JAVA" value="5" />
-          <entry key="Kotlin" value="11513" />
+          <entry key="Kotlin" value="11621" />
         </counts>
       </usages-collector>
     </session>
@@ -73,58 +82,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/base/QueueManager.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="160">
-              <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="28" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/base/Signal.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="80">
-              <caret line="4" column="28" selection-start-line="4" selection-start-column="28" selection-end-line="4" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-              <folding>
-                <element signature="e#16#97#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/base/Columbus.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/App.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+            <state relative-caret-position="180">
+              <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
               <folding>
                 <element signature="e#0#102#0" expanded="true" />
               </folding>
@@ -133,13 +94,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/base/Flow.kt">
+        <entry file="file://$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="19" column="104" lean-forward="true" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
-              <folding>
-                <element signature="e#14#126#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="400">
+              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -147,8 +114,44 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/base/FlowPriority.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
-              <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+            <state relative-caret-position="120">
+              <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="560">
+              <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="580">
+              <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/base/NavigationManager.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="200">
+              <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/base/QueueManager.kt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1980">
+              <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -156,8 +159,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/base/SignalResolver.kt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="421">
-              <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+            <state relative-caret-position="780">
+              <caret line="39" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -166,7 +169,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/base/FlowSignalMapper.kt">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -396,7 +399,7 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="7789146856000" />
+        <entry key="$PROJECT_DIR$" value="7789329434000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/build.gradle" value="467062554" />
         <entry key="$PROJECT_DIR$/gradle.properties" value="3650535818" />
@@ -574,25 +577,24 @@
         <option value="$PROJECT_DIR$/src/main/java/base/NavigationManager.kt" />
         <option value="$PROJECT_DIR$/src/main/java/offer/OfferFlow.kt" />
         <option value="$PROJECT_DIR$/src/main/java/base/Flow.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt" />
         <option value="$PROJECT_DIR$/src/main/java/home/HomeFlow.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt" />
         <option value="$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/App.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt" />
-        <option value="$PROJECT_DIR$/src/main/java/base/FlowPriority.kt" />
         <option value="$PROJECT_DIR$/src/main/java/base/Signal.kt" />
         <option value="$PROJECT_DIR$/src/main/java/base/FlowSignalMapper.kt" />
         <option value="$PROJECT_DIR$/src/main/java/base/QueueManager.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/base/FlowPriority.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt" />
+        <option value="$PROJECT_DIR$/src/main/java/App.kt" />
         <option value="$PROJECT_DIR$/src/main/java/base/SignalResolver.kt" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-1920" />
-    <option name="y" value="-93" />
-    <option name="width" value="1920" />
-    <option name="height" value="1057" />
+  <component name="ProjectFrameBounds">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -603,102 +605,104 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="gradle" type="462c0819:PsiDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="base" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="deeplink" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="detail" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="home" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="offer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="player" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="flows_comm" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="module_interaction_viu" type="462c0819:PsiDirectoryNode" />
+              <item name="module_flow" type="462c0819:PsiDirectoryNode" />
+              <item name="flows_comm" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="subs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="flows_comm" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -806,10 +810,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1920" y="-93" width="1920" height="1057" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.11128861" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2074392" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -818,11 +822,11 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32997987" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.42465752" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.825079" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39936775" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32897383" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32876712" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32897383" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
@@ -929,20 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/base/IRouter.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="26" selection-start-line="3" selection-start-column="26" selection-end-line="3" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/base/NavigationManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/subs/UserSubStatus.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
@@ -967,24 +957,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="20" column="25" lean-forward="true" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/home/HomeFlow.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="24" column="85" selection-start-line="24" selection-start-column="85" selection-end-line="24" selection-end-column="85" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="20" column="35" lean-forward="true" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -1005,65 +981,90 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/Columbus.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="30" column="36" selection-start-line="30" selection-start-column="36" selection-end-line="30" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/IRouter.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/App.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="13" column="31" lean-forward="true" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
+        <state relative-caret-position="180">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
           <folding>
             <element signature="e#0#102#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="28" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="28" />
+        <state relative-caret-position="400">
+          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/detail/DetailFlow.kt">
+    <entry file="file://$PROJECT_DIR$/src/main/java/deeplink/DeeplinkListener.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#16#97#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="120">
+          <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/base/FlowPriority.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
-          <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+        <state relative-caret-position="120">
+          <caret line="6" column="1" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/player/PlayerFlow.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="560">
+          <caret line="33" column="69" selection-start-line="33" selection-start-column="69" selection-end-line="33" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/subs/SubscriptionFlow.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="35" column="69" selection-start-line="35" selection-start-column="69" selection-end-line="35" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/NavigationManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="200">
+          <caret line="10" column="1" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/base/QueueManager.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="99" column="8" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/base/FlowSignalMapper.kt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
-          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/base/Columbus.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="29" column="26" lean-forward="true" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/base/QueueManager.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="38" column="28" selection-start-line="38" selection-start-column="28" selection-end-line="38" selection-end-column="28" />
+          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/base/SignalResolver.kt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="421">
-          <caret line="45" column="12" selection-start-line="45" selection-start-column="12" selection-end-line="45" selection-end-column="12" />
+        <state relative-caret-position="780">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>

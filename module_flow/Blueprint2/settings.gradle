@@ -1,0 +1,2 @@
+include ':app', ':device', ':user', ':location', ':gps', ':programming', ':home', ':feature-init', ':global-app-config', ':core'
+rootProject.name='Blueprint2'
