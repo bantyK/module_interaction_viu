@@ -8,9 +8,8 @@ import com.vuclip.viu2.base.StateMachine
 
 class AppInitStateMachine : StateMachine, SignalDispatcher {
 
-    private val signalList = ArrayList<QueueItem>()
-
     private val dependencyResolver = DependencyResolver()
+    private val signalResolver = SignalResolver(dependencyResolver)
 
     val mapper = SignalModuleMapper()
 
@@ -37,11 +36,8 @@ class AppInitStateMachine : StateMachine, SignalDispatcher {
             dependencyResolver.addCompletedComponent(component.componentId)
         } else {
             val pendingSignals = dependencyResolver.getPendingSignals(component.componentProps.dependencies)
-            signalList.add(0, QueueItem(signal, component, pendingSignals))
-            Log.d(
-                "AppInitStateMachine", "Added to queue\n\tQueue updated: $signalList\n\t" +
-                        "Dependencies for $signal:\n\t $pendingSignals"
-            )
+            signalResolver.add(QueueItem(signal, component, pendingSignals))
+            Log.d("AppInitStateMachine", "Dependencies for $signal:\n\t $pendingSignals")
         }
 
         // Execution logic
@@ -52,14 +48,7 @@ class AppInitStateMachine : StateMachine, SignalDispatcher {
 
         // if no -- use standard process of finding next eligible signal
 
-        var componentToExecute: FeatureComponent? = null
-        for (i in 0 until signalList.size) {
-            // check if all pending signals are already resolved
-            if (dependencyResolver.checkAllDependencyResolved(signalList[i])) {
-                componentToExecute = signalList.removeAt(i).component
-                break
-            }
-        }
+        var componentToExecute: FeatureComponent? = signalResolver.getInvokable()
 
         if (componentToExecute == null) {
             Log.d("AppInitStateMachine", "Nothing ready to execute")
