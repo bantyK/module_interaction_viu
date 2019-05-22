@@ -11,7 +11,11 @@ data class FeatureComponent(
     @SerializedName("component_info")
     val componentInfo: ComponentInfo,
     @SerializedName("component_props")
-    val componentProps: ComponentProps,
+    val componentProps: ComponentProps?,
     @SerializedName("component_state_machine")
     val componentStateMachine: ComponentStateMachine
-)
+) {
+    override fun toString(): String {
+        return componentId
+    }
+}

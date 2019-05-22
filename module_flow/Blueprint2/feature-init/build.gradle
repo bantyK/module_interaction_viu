@@ -42,4 +42,6 @@ dependencies {
     implementation project(':global-app-config')
     implementation project(':core')
     implementation project(':network')
+    implementation project(':security')
+    implementation project(':viu-security')
 }

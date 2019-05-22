@@ -4,7 +4,7 @@ package com.vuclip.viu2.app_config.model.feature
 import com.google.gson.annotations.SerializedName
 
 data class ComponentProps(
-    val dependencies: List<String>,
+    val dependencies: List<String>?,
     @SerializedName("has_ui")
     val hasUi: Boolean,
     @SerializedName("needs_permissions")

@@ -1,13 +1,14 @@
 package com.vuclip.viu2.init_feature
 
 import android.util.Log
+import com.vuclip.viu2.app_config.model.feature.ComponentProps
 
 class DependencyResolver {
     private val completedComponents = arrayListOf<String>()
 
     fun addCompletedComponent(componentId: String) {
         completedComponents.add(componentId)
-        Log.d("AppInitStateMachine", "completed signals:\n\t $completedComponents")
+        Log.d("AppInitStateMachine", "completed signals:\n\t $completedComponents, size: ${completedComponents.size}")
     }
 
 
@@ -20,15 +21,22 @@ class DependencyResolver {
         return true
     }
 
-    fun getPendingSignals(dependencies: List<String>): ArrayList<String> {
+    fun getPendingSignals(componentProps: ComponentProps?): ArrayList<String> {
         // enlist the dependent signals
         // check if signal is ready
+
         val unResolvedDependencies = arrayListOf<String>()
-        for (dependency in dependencies) {
-            if (!completedComponents.contains(dependency)) {
-                unResolvedDependencies.add(dependency)
+        if (componentProps != null) {
+            val dependencies = componentProps.dependencies
+            if (dependencies != null) {
+                for (dependency in dependencies) {
+                    if (!completedComponents.contains(dependency)) {
+                        unResolvedDependencies.add(dependency)
+                    }
+                }
             }
         }
+
         return unResolvedDependencies
     }
 }

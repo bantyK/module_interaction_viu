@@ -4,15 +4,9 @@
       "app_name": "Viu",
       "app_id": "com.vuclip.viu"
     },
-    "app_features": [
-      "app_init",
-      "home",
-      "player",
-      "NOTE: we can add more features we want"
-    ],
+    "app_features": ["app_init", "home", "player"],
     "app_config": {
-      "launch_feature": "app_init",
-      "NOTE": "<we can add some more config here>"
+      "launch_feature": "app_init"
     }
   },
   "features": [
@@ -29,51 +23,17 @@
         "version": "0.0.1",
         "updated": "05/20/2019",
         "author": "email-id of pm/dev/support",
-        "changelog": "short summary of the change",
-        "NOTE": "<we can add more>"
-      },
-      "feature_props": {
-        "NOTE": "this needs more thinking, maybe we need new object for UI-props",
-        "has_ui": true,
-        "fullscreen": true,
-        "toast_allowed": true,
-        "runs_in_background": true,
-        "needs_permissions": "none",
-        "needs_ui": false,
-        "dependencies": [
-          "signup"
-        ],
-        "NOTE": "<we can add more>"
-      },
-      "feature_config": {
-        "NOTE": "<we can add some more config here>",
-        "debug": false,
-        "blackbox": true
+        "changelog": "short summary of the change"
       },
       "feature_state_machine": {
-        "NOTE": "<we can add some more config here>",
         "start_signal": "INIT_START",
-        "end_signal": "INIT_END",
-        "launch_component": "init_device"
+        "end_signal": "INIT_END"
       },
       "feature_components": [
         {
           "component_id": "init_device",
-          "component_props": {
-            "has_ui": false,
-            "runs_in_background": true,
-            "needs_permissions": "none",
-            "needs_ui": false,
-            "dependencies": [],
-            "NOTE": "<we can add more>"
-          },
           "component_info": {
-            "desc": "Initializes the device",
-            "NOTE": "<we can add more>"
-          },
-          "component_config": {
-            "read_gaid": true,
-            "read_device_id": false
+            "desc": "Initializes the device"
           },
           "component_state_machine": {
             "start": "INIT_DEVICE_START",
@@ -81,22 +41,29 @@
           }
         },
         {
-          "component_id": "network",
-          "component_props": {
-            "has_ui": false,
-            "runs_in_background": true,
-            "needs_permissions": "none",
-            "needs_ui": false,
-            "dependencies": [],
-            "NOTE": "<we can add more>"
-          },
+          "component_id": "user",
           "component_info": {
-            "desc": "Initializes the device",
-            "NOTE": "<we can add more>"
+            "desc": "Validates the user"
           },
-          "component_config": {
-            "read_gaid": true,
-            "read_device_id": false
+          "component_state_machine": {
+            "start": "USER_CHECK_START",
+            "end": "USER_CHECK_END"
+          }
+        },
+        {
+          "component_id": "viu_security",
+          "component_info": {
+            "desc": "Viu security"
+          },
+          "component_state_machine": {
+            "start": "VIU_SECURITY_START",
+            "end": "VIU_SECURITY_END"
+          }
+        },
+        {
+          "component_id": "network",
+          "component_info": {
+            "desc": "Checks the network status of the device"
           },
           "component_state_machine": {
             "start": "INIT_NETWORK",
@@ -106,54 +73,51 @@
         {
           "component_id": "location",
           "component_props": {
-            "has_ui": false,
-            "runs_in_background": true,
-            "needs_permissions": "none",
-            "needs_ui": false,
-            "dependencies": [
-              "network"
-            ],
-            "NOTE": "<we can add more>"
+            "dependencies": ["network"]
           },
           "component_info": {
-            "desc": "Checks IP Based Location",
-            "NOTE": "<we can add more>"
-          },
-          "component_config": {
-            "fallback": "gps_location",
-            "read_device_id": false
+            "desc": "Checks IP Based Location"
           },
           "component_state_machine": {
             "start": "LOCATION_CHECK_START",
-            "end": "LOCATION_CHECK_END",
-            "sequence": ""
+            "end": "LOCATION_CHECK_END"
           }
         },
         {
           "component_id": "gps_location",
           "component_props": {
-            "has_ui": true,
-            "runs_in_background": false,
-            "needs_permissions": "gps",
-            "needs_ui": true,
-            "dependencies": [
-              "location",
-              "network",
-              "init_device"
-            ],
-            "NOTE": "<we can add more>"
+            "dependencies": ["location", "network", "init_device"]
           },
           "component_info": {
-            "desc": "Checks IP Based Location on GPS",
-            "NOTE": "<we can add more>"
-          },
-          "component_config": {
-            "fallback": "gps_location",
-            "read_device_id": false
+            "desc": "Checks IP Based Location on GPS"
           },
           "component_state_machine": {
             "start": "GPS_CHECK_START",
             "end": "GPS_CHECK_END"
+          }
+        },
+        {
+          "component_id": "security",
+
+          "component_info": {
+            "desc": "Device and OS related checks"
+          },
+          "component_state_machine": {
+            "start": "DEVICE_SECURITY_START",
+            "end": "DEVICE_SECURITY_END"
+          }
+        },
+        {
+          "component_id": "programming",
+          "component_props": {
+            "dependencies": ["location", "user"]
+          },
+          "component_info": {
+            "desc": "Fetches the programming"
+          },
+          "component_state_machine": {
+            "start": "USER_CHECK_START",
+            "end": "USER_CHECK_END"
           }
         }
       ]
