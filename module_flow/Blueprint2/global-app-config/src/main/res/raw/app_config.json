@@ -14,7 +14,7 @@
       "feature_id": "core",
       "platform_config": {
         "android": {
-          "launcher_module": ""
+          "launcher_module": "com.vuclip.viu2.feature_core.CoreFeatureLauncher"
         }
       },
       "feature_config": {

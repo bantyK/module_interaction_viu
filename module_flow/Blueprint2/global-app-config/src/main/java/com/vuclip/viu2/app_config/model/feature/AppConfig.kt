@@ -5,7 +5,9 @@ import com.google.gson.annotations.SerializedName
 
 data class AppConfig(
     val app: App,
+
     @SerializedName("core_components")
     val coreComponents: CoreComponents,
+
     val features: List<Feature>
 )

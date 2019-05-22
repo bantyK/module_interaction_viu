@@ -1,2 +1,2 @@
-include ':app', ':device', ':user', ':location', ':gps', ':programming', ':home', ':feature-init', ':global-app-config', ':core', ':network', ':security', ':viu-security', ':columbus', ':state-machine'
+include ':app', ':device', ':user', ':location', ':gps', ':programming', ':home', ':feature-init', ':global-app-config', ':core', ':network', ':security', ':viu-security', ':columbus', ':state-machine', ':feature-core'
 rootProject.name='Blueprint2'

@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/columbus" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/device" />
+            <option value="$PROJECT_DIR$/feature-core" />
             <option value="$PROJECT_DIR$/feature-init" />
             <option value="$PROJECT_DIR$/global-app-config" />
             <option value="$PROJECT_DIR$/gps" />

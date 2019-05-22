@@ -13,6 +13,8 @@ class AppConfigLoader {
     companion object {
         lateinit var jsonString: String
 
+        lateinit var appConfig: AppConfig
+
         private var instance: AppConfigLoader? = null
 
         fun getInstance(): AppConfigLoader {
@@ -25,6 +27,7 @@ class AppConfigLoader {
 
     fun init(context: Context) {
         jsonString = loadJsonFromFile(context)
+        appConfig = Gson().fromJson(jsonString, AppConfig::class.java)
     }
 
     private fun loadJsonFromFile(context: Context): String {
@@ -53,7 +56,7 @@ class AppConfigLoader {
     }
 
     private fun getAppConfig(): AppConfig? {
-        return Gson().fromJson(jsonString, AppConfig::class.java)
+        return appConfig
     }
 
     fun getLauncher(): String? {
@@ -69,6 +72,15 @@ class AppConfigLoader {
                     return feature
                 }
             }
+        }
+
+        return null
+    }
+
+    fun getCoreFeature(): Feature? {
+        for (feature in appConfig.features) {
+            if (feature.featureId == "core")
+                return feature
         }
 
         return null

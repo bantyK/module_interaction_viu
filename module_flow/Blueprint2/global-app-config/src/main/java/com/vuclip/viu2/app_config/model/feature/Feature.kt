@@ -18,4 +18,8 @@ data class Feature(
     val featureStateMachine: FeatureStateMachine,
     @SerializedName("platform_config")
     val platformConfig: PlatformConfig
-)
+) {
+    override fun toString(): String {
+        return featureId
+    }
+}
