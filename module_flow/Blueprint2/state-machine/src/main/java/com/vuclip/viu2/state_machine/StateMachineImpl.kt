@@ -1,29 +1,43 @@
-package com.vuclip.viu2.init_feature
+package com.vuclip.viu2.state_machine
 
 import android.util.Log
+import com.vuclip.viu2.app_config.model.feature.Feature
 import com.vuclip.viu2.app_config.model.feature.FeatureComponent
-import com.vuclip.viu2.base.Invokable
+import com.vuclip.viu2.base.FeatureRouter
 import com.vuclip.viu2.base.SignalDispatcher
 import com.vuclip.viu2.base.StateMachine
 import java.util.concurrent.Executors
 
-class AppInitStateMachine : StateMachine, SignalDispatcher {
-
+class StateMachineImpl : StateMachine, SignalDispatcher {
     private val dependencyResolver = DependencyResolver()
+
     private val signalResolver = SignalResolver(dependencyResolver)
-
     private var componentToExecute: FeatureComponent? = null
+    private val onDemandComponents = arrayListOf<String>()
+    private lateinit var router: FeatureRouter
 
-    private val mapper = SignalModuleMapper()
 
     override fun onSignalReceived(signal: String, component: FeatureComponent) {
         processSignal(signal, component)
     }
 
-    override fun startEngine(components: List<FeatureComponent>) {
-        Log.d("AppInitStateMachine", "State machine started with:\n\t ${components}, size: ${components.size}")
-        for (component in components) {
-            processSignal(component.componentStateMachine.start, component)
+    override fun registerRouter(router: FeatureRouter) {
+        this.router = router
+    }
+
+    override fun startEngine(features: Feature) {
+        Log.d(
+            "AppInitStateMachine",
+            "State machine started with:\n\t ${features.featureComponents}, size: ${features.featureComponents.size}"
+        )
+        for (id in features.featureConfig.onDemandComponents) {
+            onDemandComponents.add(id)
+        }
+
+        for (component in features.featureComponents) {
+            if (!onDemandComponents.contains(component.componentId)) {
+                processSignal(component.componentStateMachine.start, component)
+            }
         }
     }
 
@@ -55,7 +69,7 @@ class AppInitStateMachine : StateMachine, SignalDispatcher {
         if (component != null) {
             Log.d("AppInitStateMachine", "Invoking : ${component.componentId}")
             Executors.newCachedThreadPool().submit {
-                (mapper.getModule(component.componentId) as Invokable).invoke(component, this)
+                router.route(component.componentId, component, this)
             }
         }
     }

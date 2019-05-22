@@ -65,8 +65,6 @@ o
 ?home/src/main/java/com/banty/home/ui/presenter/HomePresenter.kt,2/d/2df810745f51e960fe935f2accd867ccc6abbd15
 a
 1home/src/main/java/com/banty/home/HomeFragment.kt,0/7/07d3a5222bad21ade81242aeed832758eebe8db1
-i
-9app/src/main/java/com/banty/blueprintapp/MainPresenter.kt,4/a/4a2e1abdcd0e478b471348e4b9f3d8ae221eac6b
 [
 +common/src/main/java/com/banty/core/Flow.kt,a/f/afdff55b6121a6394867dcf13f188a4c71db324f
 c
@@ -95,8 +93,6 @@ l
 <auth/src/main/java/com/banty/auth/services/BillingService.kt,6/8/68874135cc5c38a9be5f8a40b81ef15ccc0d3498
 ]
 -home/src/main/java/com/banty/home/HomeFlow.kt,5/d/5db55539cb373cdee138e0f09d85c05dfd2fec20
-c
-3common/src/main/java/com/banty/core/ViuComponent.kt,1/9/1986fcdb6721cf876cb9c142a32aa1d69e441453
 ^
 .auth/src/main/java/com/banty/auth/AuthBlock.kt,8/e/8ed30b0bc95eb6bccbd6af4f04109d59a3bd14d7
 `
@@ -105,3 +101,13 @@ c
 0auth/src/main/java/com/banty/auth/AuthService.kt,a/f/afecf441aec9bb80669bcdb0e8aed3fd3fbaf78b
 i
 9auth/src/main/java/com/banty/auth/services/UserService.kt,a/c/acdc5037d071cbc2975dbe8890621b239dadbd1e
+p
+@player/src/main/java/com/banty/player/fragment/PlayerFragment.kt,a/8/a81a9a1b565163533079c0f07613c53d4947491b
+l
+<subscription/src/main/java/com/banty/subscription/SubFlow.kt,b/1/b14cc119f81afc55ac8f8f985fcca5d754e90c51
+c
+3player/src/main/java/com/banty/player/PlayerFlow.kt,1/0/104470d1f7e76f5c6c6c4630406cc19e3ca2bfce
+<
+build.gradle,f/0/f07866736216be0ee2aba49e392191aeae700a35
+f
+6app/src/main/java/com/banty/blueprintapp/MainRouter.kt,4/8/48618697ad619e709607f37fa0454db60634557f

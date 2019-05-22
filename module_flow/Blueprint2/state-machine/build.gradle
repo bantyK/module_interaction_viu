@@ -33,16 +33,6 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 
-    implementation project(':state-machine')
-    implementation project(':device')
-    implementation project(':user')
-    implementation project(':location')
-    implementation project(':gps')
-    implementation project(':programming')
-    implementation project(':home')
     implementation project(':global-app-config')
     implementation project(':core')
-    implementation project(':network')
-    implementation project(':security')
-    implementation project(':viu-security')
 }

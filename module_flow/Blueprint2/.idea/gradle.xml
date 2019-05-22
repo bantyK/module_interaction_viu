@@ -9,6 +9,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
+            <option value="$PROJECT_DIR$/columbus" />
             <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/device" />
             <option value="$PROJECT_DIR$/feature-init" />
@@ -19,6 +20,7 @@
             <option value="$PROJECT_DIR$/network" />
             <option value="$PROJECT_DIR$/programming" />
             <option value="$PROJECT_DIR$/security" />
+            <option value="$PROJECT_DIR$/state-machine" />
             <option value="$PROJECT_DIR$/user" />
             <option value="$PROJECT_DIR$/viu-security" />
           </set>

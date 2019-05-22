@@ -11,11 +11,49 @@
   },
   "features": [
     {
+      "feature_id": "core",
+      "platform_config": {
+        "android": {
+          "launcher_module": ""
+        }
+      },
+      "feature_config": {
+        "on_demand_components": ["network"]
+      },
+      "feature_info": {
+        "name": "Core features to be used by all other features.",
+        "desc": "inits the app",
+        "version": "0.0.1",
+        "updated": "05/20/2019",
+        "author": "email-id of pm/dev/support",
+        "changelog": "short summary of the change"
+      },
+      "feature_state_machine": {
+        "start_signal": "",
+        "end_signal": ""
+      },
+      "feature_components": [
+        {
+          "component_id": "network",
+          "component_info": {
+            "desc": "Checks the network status of the device"
+          },
+          "component_state_machine": {
+            "start": "INIT_NETWORK",
+            "end": "NETWORK_READY"
+          }
+        }
+      ]
+    },
+    {
       "feature_id": "app_init",
       "platform_config": {
         "android": {
           "launcher_module": "com.vuclip.viu2.init_feature.AppInitLauncher"
         }
+      },
+      "feature_config": {
+        "on_demand_components": ["gps_location"]
       },
       "feature_info": {
         "name": "App Initialization",
@@ -61,16 +99,6 @@
           }
         },
         {
-          "component_id": "network",
-          "component_info": {
-            "desc": "Checks the network status of the device"
-          },
-          "component_state_machine": {
-            "start": "INIT_NETWORK",
-            "end": "NETWORK_READY"
-          }
-        },
-        {
           "component_id": "location",
           "component_props": {
             "dependencies": ["network"]
@@ -89,7 +117,7 @@
             "dependencies": ["location", "network", "init_device"]
           },
           "component_info": {
-            "desc": "Checks IP Based Location on GPS"
+            "desc": "Checks Location using device GPS"
           },
           "component_state_machine": {
             "start": "GPS_CHECK_START",

@@ -1,4 +1,4 @@
-package com.vuclip.viu2.init_feature
+package com.vuclip.viu2.state_machine
 
 import com.vuclip.viu2.app_config.model.feature.FeatureComponent
 

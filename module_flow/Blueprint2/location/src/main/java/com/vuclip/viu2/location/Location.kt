@@ -9,7 +9,7 @@ class Location : Invokable {
 
     override fun invoke(component: FeatureComponent, signalDispatcher: SignalDispatcher) {
         Log.d("Viu", "${Thread.currentThread().name} -> Location component invoke")
-        Thread.sleep(2_000)
+
         signalDispatcher.onSignalReceived(component.componentStateMachine.end, component)
     }
 }

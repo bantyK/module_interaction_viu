@@ -1,10 +1,10 @@
-package com.vuclip.viu2.init_feature
+package com.vuclip.viu2.state_machine
 
 import android.util.Log
 import com.vuclip.viu2.app_config.model.feature.FeatureComponent
 
 class SignalResolver(
-    private val dependencyResolver: DependencyResolver
+    private val dependencyResolver: com.vuclip.viu2.state_machine.DependencyResolver
 ) {
     private val signalList = ArrayList<QueueItem>()
 
@@ -17,6 +17,7 @@ class SignalResolver(
         for (i in 0 until signalList.size) {
             // check if all pending signals are already resolved
             if (dependencyResolver.checkAllDependencyResolved(signalList[i])) {
+                Log.d("AppInitStateMachine", "Removed ${signalList[i]} from queue, Queue:\n\t$signalList")
                 return signalList.removeAt(i).component
             }
         }
