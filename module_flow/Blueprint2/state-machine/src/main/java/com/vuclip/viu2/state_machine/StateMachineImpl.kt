@@ -6,6 +6,7 @@ import com.vuclip.viu2.app_config.model.feature.FeatureComponent
 import com.vuclip.viu2.base.FeatureRouter
 import com.vuclip.viu2.base.SignalDispatcher
 import com.vuclip.viu2.base.StateMachine
+import com.vuclip.viu2.state_machine.util.SupportedSignalUtility
 import java.util.concurrent.Executors
 
 class StateMachineImpl : StateMachine, SignalDispatcher {
@@ -14,6 +15,9 @@ class StateMachineImpl : StateMachine, SignalDispatcher {
     private val signalResolver = SignalResolver(dependencyResolver)
     private var componentToExecute: FeatureComponent? = null
     private val onDemandComponents = arrayListOf<String>()
+    private val supportedComponents = arrayListOf<String>()
+    private val pendingForExecution = arrayListOf<String>()
+
     private lateinit var router: FeatureRouter
 
 
@@ -49,10 +53,12 @@ class StateMachineImpl : StateMachine, SignalDispatcher {
 
         if (signal == component.componentStateMachine.end) {
             dependencyResolver.addCompletedComponent(component.componentId)
+            pendingForExecution.remove(component.componentId)
         } else {
-            val pendingSignals = dependencyResolver.getPendingSignals(component.componentProps)
-            signalResolver.add(QueueItem(signal, component, pendingSignals))
-            Log.d("AppInitStateMachine", "Dependencies for $signal:\n\t $pendingSignals")
+            val dependencies = dependencyResolver.getDependencies(component.componentProps)
+            signalResolver.add(QueueItem(signal, component, dependencies))
+            resolveDependencies(signal,dependencies)
+            Log.d("AppInitStateMachine", "Dependencies for $signal:\n\t $dependencies")
         }
 
         componentToExecute = signalResolver.getInvokable()
@@ -60,8 +66,25 @@ class StateMachineImpl : StateMachine, SignalDispatcher {
         if (componentToExecute == null) {
             Log.d("AppInitStateMachine", "Nothing ready to execute")
         } else {
+            pendingForExecution.add(componentToExecute!!.componentId)
             executeSignal(componentToExecute)
         }
+    }
+
+    private fun resolveDependencies(signal: String, dependencies: ArrayList<String>) {
+
+        for (dependency in dependencies) {
+            // check if the dependency is not present in current feature
+            if (!supportedComponents.contains(dependency)) {
+                // submit the signal to columbus
+            } else {
+                // check if dependent component is not in progress
+                if(!pendingForExecution.contains(dependency)) {
+                    router.route(signal,)
+                }
+            }
+        }
+
     }
 
 
@@ -74,4 +97,7 @@ class StateMachineImpl : StateMachine, SignalDispatcher {
         }
     }
 
+    override fun setSupportedDependencies(feature: Feature) {
+        SupportedSignalUtility.storeSupportedComponents(supportedComponents, feature)
+    }
 }

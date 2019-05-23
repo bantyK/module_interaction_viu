@@ -73,6 +73,9 @@
           "component_info": {
             "desc": "Initializes the device"
           },
+          "component_props": {
+            "dependencies": ["network"]
+          },
           "component_state_machine": {
             "start": "INIT_DEVICE_START",
             "end": "DEVICE_INIT_END"

@@ -10,4 +10,6 @@ interface StateMachine {
     fun registerRouter(router: FeatureRouter)
 
     fun processSignal(signal: String, component: FeatureComponent) // should be a separate class for Signal
+
+    fun setSupportedDependencies(feature: Feature)
 }

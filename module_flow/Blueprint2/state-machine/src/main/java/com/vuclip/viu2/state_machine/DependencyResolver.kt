@@ -13,15 +13,15 @@ class DependencyResolver {
 
 
     fun checkAllDependencyResolved(queueItem: QueueItem): Boolean {
-        for (signal in queueItem.pendingSignals) {
-            if (!completedComponents.contains(signal)) {
+        for (component in queueItem.pendingComponents) {
+            if (!completedComponents.contains(component)) {
                 return false
             }
         }
         return true
     }
 
-    fun getPendingSignals(componentProps: ComponentProps?): ArrayList<String> {
+    fun getDependencies(componentProps: ComponentProps?): ArrayList<String> {
         // enlist the dependent signals
         // check if signal is ready
 

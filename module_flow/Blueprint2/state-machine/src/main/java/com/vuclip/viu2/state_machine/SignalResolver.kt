@@ -4,7 +4,7 @@ import android.util.Log
 import com.vuclip.viu2.app_config.model.feature.FeatureComponent
 
 class SignalResolver(
-    private val dependencyResolver: com.vuclip.viu2.state_machine.DependencyResolver
+    private val dependencyResolver: DependencyResolver
 ) {
     private val signalList = ArrayList<QueueItem>()
 

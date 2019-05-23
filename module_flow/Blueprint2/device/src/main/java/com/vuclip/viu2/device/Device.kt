@@ -10,6 +10,7 @@ class Device : Invokable {
 
     override fun invoke(component: FeatureComponent, signalDispatcher: SignalDispatcher) {
         Log.d("Viu", "${Thread.currentThread().name} -> Device component invoke")
+
         signalDispatcher.onSignalReceived(component.componentStateMachine.end, component)
     }
 

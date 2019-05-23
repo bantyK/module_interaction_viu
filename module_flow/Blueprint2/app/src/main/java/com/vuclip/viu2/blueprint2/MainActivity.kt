@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun startLauncherComponent() {
 
-//        initColumbus()
 
         startCoreFeature()
 
@@ -46,4 +45,4 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
-class FeatureNotFoundException(s: String) : Throwable()
+class FeatureNotFoundException(message: String) : Throwable()
